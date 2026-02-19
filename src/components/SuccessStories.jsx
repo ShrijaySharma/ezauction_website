@@ -6,15 +6,15 @@ const stories = [
     {
         title: "Suncity Society Cricket Auction",
         role: "Housing Society Tournament",
-        date: "Jan 2026",
+        date: "DEC 2025",
         description: "Successfully managed 8 teams and 120+ players for a society-wide premium cricket league.",
         gradient: "from-blue-500 to-cyan-500"
     },
     {
         title: "Parshuram Cup Cricket Auction",
         role: "Regional Cricket Tournament",
-        date: "Dec 2025",
-        description: "A high-stakes regional auction with real-time bidding for 10 franchises.",
+        date: "JAN 2026",
+        description: "A high-stakes regional auction with real-time bidding for 18 franchises.",
         gradient: "from-purple-500 to-pink-500"
     }
 ];

@@ -106,7 +106,7 @@ const Hero = () => {
                                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                                     <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                                 </div>
-                                <span className="text-xs text-gray-400 font-medium ml-2">
+                                <span className="text-sm md:text-base text-gray-300 font-bold ml-2">
                                     EzAuction - {dashboards[currentIndex].title}
                                 </span>
                             </div>
@@ -154,8 +154,8 @@ const Hero = () => {
                                         key={idx}
                                         onClick={() => setCurrentIndex(idx)}
                                         className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex
-                                                ? `w-6 bg-gradient-to-r ${dashboards[idx].color}`
-                                                : 'bg-white/30 hover:bg-white/50'
+                                            ? `w-6 bg-gradient-to-r ${dashboards[idx].color}`
+                                            : 'bg-white/30 hover:bg-white/50'
                                             }`}
                                     />
                                 ))}
