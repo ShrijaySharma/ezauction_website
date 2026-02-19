@@ -39,7 +39,7 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className={`text-sm font-medium transition-colors hover:text-accent ${isScrolled ? 'text-textDark' : 'text-white/90'
+                            className={`text-lg font-bold tracking-wide transition-all duration-300 transform hover:scale-110 hover:text-accent ${isScrolled ? 'text-textDark' : 'text-white/90'
                                 }`}
                         >
                             {link.name}
