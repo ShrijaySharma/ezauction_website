@@ -10,19 +10,58 @@ const Pricing = () => {
                     <p className="text-gray-500 text-lg">Everything you need for a successful auction.</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    {/* Standard Plan */}
-                    <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
-                        <div className="text-center mb-8">
-                            <h3 className="text-2xl font-bold text-gray-800 mb-2">Standard Access</h3>
-                            <p className="text-gray-500">Complete Self-Managed Solution</p>
-                            <div className="mt-6 flex items-center justify-center text-primary">
-                                <span className="text-4xl font-bold">₹4,000</span>
-                                <span className="text-gray-400 ml-2 font-medium">/ auction</span>
+                <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    {/* Basic Plan */}
+                    <div className="bg-white p-6 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div className="text-center mb-6">
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">Basic Access</h3>
+                            <p className="text-gray-500 text-sm">For Small Friendly Matches</p>
+                            <div className="mt-4 flex items-center justify-center text-primary">
+                                <span className="text-3xl font-bold">₹2,000</span>
+                                <span className="text-gray-400 ml-1 text-sm font-medium">/ auction</span>
                             </div>
                         </div>
 
-                        <ul className="space-y-4 mb-8">
+                        <ul className="space-y-3 mb-8">
+                            {[
+                                "Full App Access for 1 Day",
+                                "Up to 4 Teams Only",
+                                "Admin, Host & Team Owner Dashboards",
+                                "Real-time Bidding System",
+                                "Secured Owner login"
+                            ].map((feature, i) => (
+                                <li key={i} className="flex items-center text-gray-700 text-sm font-medium">
+                                    <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center mr-3 shrink-0">
+                                        <Check className="w-3 h-3 text-gray-600" />
+                                    </div>
+                                    {feature}
+                                </li>
+                            ))}
+                        </ul>
+
+                        <button
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="w-full py-3 rounded-xl border border-gray-300 text-gray-600 font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
+                        >
+                            Choose Basic
+                        </button>
+                    </div>
+
+                    {/* Standard Plan */}
+                    <div className="bg-white p-6 rounded-3xl shadow-xl border-2 border-primary relative overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 z-10">
+                        <div className="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">
+                            Recommended
+                        </div>
+                        <div className="text-center mb-6">
+                            <h3 className="text-2xl font-bold text-gray-800 mb-2">Standard</h3>
+                            <p className="text-gray-500 text-sm">Complete Self-Managed Solution</p>
+                            <div className="mt-4 flex items-center justify-center text-primary">
+                                <span className="text-4xl font-bold">₹4,000</span>
+                                <span className="text-gray-400 ml-1 text-sm font-medium">/ auction</span>
+                            </div>
+                        </div>
+
+                        <ul className="space-y-3 mb-8">
                             {[
                                 "Full App Access for 1 Day",
                                 "Unlimited Teams & Players",
@@ -30,11 +69,11 @@ const Pricing = () => {
                                 "Real-time Bidding System",
                                 "Video Call Support",
                                 "Full Setup Guidance",
-                                "Secured Owner login"
+                                "Sold/Unsold Data Export"
                             ].map((feature, i) => (
-                                <li key={i} className="flex items-center text-gray-700 font-medium">
-                                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3 shrink-0">
-                                        <Check className="w-4 h-4 text-green-600" />
+                                <li key={i} className="flex items-center text-gray-700 text-sm font-medium">
+                                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 shrink-0">
+                                        <Check className="w-3 h-3 text-green-600" />
                                     </div>
                                     {feature}
                                 </li>
@@ -43,39 +82,39 @@ const Pricing = () => {
 
                         <button
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="w-full py-4 rounded-xl border-2 border-primary text-primary text-lg font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2"
+                            className="w-full py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg"
                         >
                             Choose Standard
                         </button>
                     </div>
 
                     {/* Premium Plan */}
-                    <div className="bg-white p-8 rounded-3xl shadow-2xl border-2 border-accent relative overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <div className="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
-                            Most Popular
+                    <div className="bg-white p-6 rounded-3xl shadow-lg border-2 border-accent relative overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                        <div className="absolute top-0 right-0 bg-accent text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">
+                            VIP
                         </div>
 
-                        <div className="text-center mb-8">
-                            <h3 className="text-2xl font-bold text-gray-800 mb-2">Premium Managed</h3>
-                            <p className="text-gray-500">Hassle-Free Tournament Management</p>
-                            <div className="mt-6 flex items-center justify-center text-primary">
-                                <span className="text-4xl font-bold">₹5,000</span>
-                                <span className="text-gray-400 ml-2 font-medium">/ auction</span>
+                        <div className="text-center mb-6">
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">Premium</h3>
+                            <p className="text-gray-500 text-sm">Hassle-Free Management</p>
+                            <div className="mt-4 flex items-center justify-center text-primary">
+                                <span className="text-3xl font-bold">₹5,000</span>
+                                <span className="text-gray-400 ml-1 text-sm font-medium">/ auction</span>
                             </div>
                         </div>
 
-                        <ul className="space-y-4 mb-8">
+                        <ul className="space-y-3 mb-8">
                             {[
                                 "Everything in Standard Plan",
+                                "Unlimited Teams & Players",
                                 "Full Tournament Management",
                                 "We Add Teams & Players for You",
                                 "Dedicated Priority Support",
-                                "Custom Branding Options",
-                                "Post-Auction Data Reports"
+                                "Custom Branding Options"
                             ].map((feature, i) => (
-                                <li key={i} className="flex items-center text-gray-700 font-medium">
-                                    <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mr-3 shrink-0">
-                                        <Star className="w-4 h-4 text-accent" />
+                                <li key={i} className="flex items-center text-gray-700 text-sm font-medium">
+                                    <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center mr-3 shrink-0">
+                                        <Star className="w-3 h-3 text-accent" />
                                     </div>
                                     {feature}
                                 </li>
@@ -84,9 +123,9 @@ const Pricing = () => {
 
                         <button
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="w-full py-4 rounded-xl bg-accent text-white text-lg font-bold hover:bg-blue-600 transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                            className="w-full py-3 rounded-xl bg-accent text-white font-bold hover:bg-indigo-600 transition-colors shadow-md flex items-center justify-center gap-2"
                         >
-                            <Star className="w-5 h-5 fill-current" />
+                            <Star className="w-4 h-4 fill-current" />
                             Book Premium
                         </button>
                     </div>
