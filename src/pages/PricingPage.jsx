@@ -146,10 +146,10 @@ const PricingPage = () => {
                                         <button
                                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                                             className={`w-full py-3 rounded-xl font-bold transition-all shadow-md ${plan.name === "Premium Managed"
-                                                    ? "bg-accent text-white hover:bg-blue-600"
-                                                    : plan.highlight
-                                                        ? "bg-primary text-white hover:bg-blue-700"
-                                                        : "bg-white border text-gray-700 hover:bg-gray-50"
+                                                ? "bg-accent text-white hover:bg-blue-600"
+                                                : plan.highlight
+                                                    ? "bg-primary text-white hover:bg-blue-700"
+                                                    : "bg-white border text-gray-700 hover:bg-gray-50"
                                                 }`}
                                         >
                                             Choose {plan.name.split(" ")[0]}
@@ -164,45 +164,45 @@ const PricingPage = () => {
                 {/* Mobile Card View */}
                 <div className="md:hidden space-y-8">
                     {plans.map((plan, index) => (
-                        <div key={index} className={`bg-white p-6 rounded-3xl shadow-lg border relative overflow-hidden ${plan.highlight ? 'border-primary shadow-xl' : 'border-gray-200'}`}>
+                        <div key={index} className={`bg-white p-5 rounded-2xl shadow-lg border relative overflow-hidden ${plan.highlight ? 'border-primary shadow-xl ring-2 ring-primary/10' : 'border-gray-200'}`}>
                             {plan.tag && (
                                 <div className={`absolute top-0 right-0 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider ${plan.name === "Premium Managed" ? "bg-accent" : "bg-primary"}`}>
                                     {plan.tag}
                                 </div>
                             )}
-                            <div className="text-center mb-6">
-                                <h3 className="text-xl font-bold text-gray-800 mb-1">{plan.name}</h3>
-                                <p className="text-gray-500 text-sm mb-3">{plan.subtitle}</p>
+                            <div className="text-center mb-4">
+                                <h3 className="text-lg font-bold text-gray-800 mb-1">{plan.name}</h3>
+                                <p className="text-gray-500 text-xs mb-2">{plan.subtitle}</p>
                                 <div className="text-primary">
-                                    <span className="text-3xl font-bold">{plan.price}</span>
-                                    <span className="text-gray-400 ml-1 text-sm">/ auction</span>
+                                    <span className="text-2xl font-bold">{plan.price}</span>
+                                    <span className="text-gray-400 ml-1 text-xs">/ auction</span>
                                 </div>
                             </div>
-                            <ul className="space-y-3 mb-6">
+                            <ul className="space-y-2 mb-5">
                                 {allFeatures.map((feature, idx) => (
-                                    <li key={idx} className="flex items-center text-sm">
+                                    <li key={idx} className="flex items-start text-sm">
                                         {typeof plan.features[feature.key] === 'boolean' ? (
                                             plan.features[feature.key] ? (
-                                                <Check className="w-4 h-4 text-green-600 mr-3 shrink-0" />
+                                                <Check className="w-4 h-4 text-green-600 mr-2 shrink-0 mt-0.5" />
                                             ) : (
-                                                <X className="w-4 h-4 text-gray-300 mr-3 shrink-0" />
+                                                <X className="w-4 h-4 text-gray-300 mr-2 shrink-0 mt-0.5" />
                                             )
                                         ) : (
-                                            <Check className="w-4 h-4 text-green-600 mr-3 shrink-0" />
+                                            <Check className="w-4 h-4 text-green-600 mr-2 shrink-0 mt-0.5" />
                                         )}
-                                        <span className={!plan.features[feature.key] ? "text-gray-400 line-through" : "text-gray-700"}>
-                                            {feature.label} {typeof plan.features[feature.key] === 'string' && `(${plan.features[feature.key]})`}
+                                        <span className={`leading-tight ${!plan.features[feature.key] ? "text-gray-400 line-through" : "text-gray-700"}`}>
+                                            {feature.label} {typeof plan.features[feature.key] === 'string' && <span className="text-xs font-semibold text-primary block mt-0.5">{plan.features[feature.key]}</span>}
                                         </span>
                                     </li>
                                 ))}
                             </ul>
                             <button
                                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                className={`w-full py-3 rounded-xl font-bold transition-all ${plan.name === "Premium Managed"
-                                        ? "bg-accent text-white"
-                                        : plan.highlight
-                                            ? "bg-primary text-white"
-                                            : "bg-gray-100 text-gray-700"
+                                className={`w-full py-3 rounded-xl font-bold text-sm transition-all ${plan.name === "Premium Managed"
+                                    ? "bg-accent text-white"
+                                    : plan.highlight
+                                        ? "bg-primary text-white"
+                                        : "bg-gray-100 text-gray-700"
                                     }`}
                             >
                                 Choose Plan

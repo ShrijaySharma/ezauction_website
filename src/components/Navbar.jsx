@@ -51,7 +51,7 @@ const Navbar = () => {
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
                 <div onClick={() => navigate('/')} className="flex items-center gap-2 cursor-pointer">
-                    <img src="/ezauction.png" alt="EzAuction" className="h-16 w-auto object-contain transition-all duration-300" />
+                    <img src="/ezauction.png" alt="EzAuction" className="h-10 md:h-16 w-auto object-contain transition-all duration-300" />
                 </div>
 
                 {/* Desktop Navigation */}
@@ -105,17 +105,17 @@ const Navbar = () => {
                         exit={{ opacity: 0, height: 0 }}
                         className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
                     >
-                        <div className="flex flex-col p-6 space-y-4">
+                        <div className="flex flex-col p-4 space-y-3">
                             {navLinks.map((link) => (
                                 <button
                                     key={link.name}
                                     onClick={() => handleNavClick(link.href)}
-                                    className="text-textDark font-medium hover:text-accent text-left"
+                                    className="text-textDark font-medium hover:text-accent text-left py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors"
                                 >
                                     {link.name}
                                 </button>
                             ))}
-                            <hr className="border-gray-100" />
+                            <hr className="border-gray-100 my-2" />
                             <a
                                 href="https://app.ezauction.online"
                                 className="text-center w-full py-3 rounded-lg border border-gray-200 text-textDark font-semibold hover:bg-gray-50"

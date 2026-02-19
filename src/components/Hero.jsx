@@ -47,33 +47,33 @@ const Hero = () => {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-white space-y-8"
+                    className="text-white space-y-6 md:space-y-8 text-center md:text-left pt-10 md:pt-0"
                 >
-                    <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-sm font-medium">
+                    <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs md:text-sm font-medium mx-auto md:mx-0">
                         <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
                         <span>Live Cricket Auctions Made Easy</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight">
                         Run Your Auction <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
                             Like IPL
                         </span>
                     </h1>
 
-                    <p className="text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed">
+                    <p className="text-base md:text-xl text-gray-300 max-w-xl leading-relaxed mx-auto md:mx-0">
                         EzAuction is the professional real-time platform that transforms your local cricket tournament into a world-class bidding experience. Transparent, exciting, and paperless.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <button
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="group flex items-center justify-center space-x-2 bg-accent hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-accent/50 transition-all transform hover:-translate-y-1"
+                            className="group flex items-center justify-center space-x-2 bg-accent hover:bg-blue-600 text-white px-8 py-3 md:py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-accent/50 transition-all transform hover:-translate-y-1 w-full sm:w-auto"
                         >
                             <span>Book Your Auction</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <button className="flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                        <button className="flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white px-8 py-3 md:py-4 rounded-full text-lg font-semibold transition-all w-full sm:w-auto">
                             <Play className="w-5 h-5 fill-current" />
                             <span>View Demo</span>
                         </button>
