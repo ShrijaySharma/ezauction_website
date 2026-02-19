@@ -9,14 +9,12 @@ import CTASection from './components/CTASection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-import SuccessStories from './components/SuccessStories';
 
 function App() {
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
       <Navbar />
       <Hero />
-      <SuccessStories />
       <Features />
       <Gallery />
       <HowItWorks />

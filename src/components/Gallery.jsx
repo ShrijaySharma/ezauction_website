@@ -39,28 +39,52 @@ const Gallery = () => {
                     </h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {galleryItems.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.3 }}
-                            className="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg"
-                        >
-                            <img
-                                src={item.image}
-                                alt={item.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity" />
-                            <div className="absolute bottom-0 left-0 p-6 text-white translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <h3 className="text-xl font-bold">{item.title}</h3>
-                                <p className="text-white/80 text-sm mt-1">{item.location} • {new Date().getFullYear()}</p>
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    {/* Suncity Society Cricket Auction */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3 }}
+                        className="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-white border border-gray-100"
+                    >
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-500" />
+                        <div className="p-8 h-full flex flex-col justify-center">
+                            <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg>
                             </div>
-                        </motion.div>
-                    ))}
+                            <h3 className="text-2xl font-bold text-gray-800 mb-2">Suncity Society Cricket Auction</h3>
+                            <p className="text-gray-500 leading-relaxed">
+                                Successfully managed 8 teams and 120+ players for a society-wide premium cricket league.
+                            </p>
+                            <div className="mt-6 flex items-center text-sm font-medium text-blue-600">
+                                <span>Housing Society Tournament</span>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Parshuram Cup Cricket Auction */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3, delay: 0.1 }}
+                        className="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-white border border-gray-100"
+                    >
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500" />
+                        <div className="p-8 h-full flex flex-col justify-center">
+                            <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg>
+                            </div>
+                            <h3 className="text-2xl font-bold text-gray-800 mb-2">Parshuram Cup Cricket Auction</h3>
+                            <p className="text-gray-500 leading-relaxed">
+                                A high-stakes regional auction with real-time bidding for 10 franchises.
+                            </p>
+                            <div className="mt-6 flex items-center text-sm font-medium text-purple-600">
+                                <span>Regional Cricket Tournament</span>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
