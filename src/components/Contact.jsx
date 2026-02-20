@@ -78,7 +78,7 @@ const Contact = () => {
                                 </a>
 
                                 {/* Instagram Button */}
-                                <a href="#" className="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white py-4 rounded-xl shadow-lg shadow-orange-200 transition-all hover:opacity-90">
+                                <a href="https://www.instagram.com/ezauction_?igsh=Nmw3cnltN2FndTl1&utm_source=qr" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white py-4 rounded-xl shadow-lg shadow-orange-200 transition-all hover:opacity-90">
                                     <Instagram className="w-5 h-5" />
                                     <span className="font-bold">Follow on Instagram</span>
                                 </a>
