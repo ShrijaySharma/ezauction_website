@@ -1,7 +1,6 @@
 import React from 'react';
 import { Check, X, Star } from 'lucide-react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 const PricingPage = () => {
     const plans = [
@@ -218,7 +217,6 @@ const PricingPage = () => {
                     </p>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };

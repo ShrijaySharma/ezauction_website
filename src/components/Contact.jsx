@@ -21,13 +21,24 @@ const Contact = () => {
                             </div>
 
                             <div className="mt-12 relative z-10">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                                        <Phone className="w-6 h-6 text-green-400" />
+                                <div className="flex flex-col gap-4 mb-6">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                            <Phone className="w-6 h-6 text-green-400" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-gray-400">Call / WhatsApp</p>
+                                            <p className="text-xl font-bold">+91 76975 44446</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p className="text-sm text-gray-400">Call / WhatsApp</p>
-                                        <p className="text-xl font-bold">+91 76975 44446</p>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                            <Phone className="w-6 h-6 text-green-400" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-gray-400">Call / WhatsApp Alternate</p>
+                                            <p className="text-xl font-bold">+91 87704 55678</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -42,16 +53,28 @@ const Contact = () => {
                             <h3 className="text-2xl font-bold text-gray-800 mb-8">Connect With Us</h3>
 
                             <div className="flex flex-col gap-4 w-full max-w-xs">
-                                {/* Phone Button */}
+                                {/* Phone Button Main */}
                                 <a href="tel:+917697544446" className="flex items-center justify-center gap-3 w-full bg-gray-50 hover:bg-gray-100 text-gray-800 py-4 rounded-xl border border-gray-200 transition-all group">
                                     <Phone className="w-5 h-5 text-gray-600 group-hover:text-primary" />
                                     <span className="font-semibold">Call +91 76975 44446</span>
                                 </a>
 
-                                {/* WhatsApp Button */}
+                                {/* Phone Button Alt */}
+                                <a href="tel:+918770455678" className="flex items-center justify-center gap-3 w-full bg-gray-50 hover:bg-gray-100 text-gray-800 py-4 rounded-xl border border-gray-200 transition-all group">
+                                    <Phone className="w-5 h-5 text-gray-600 group-hover:text-primary" />
+                                    <span className="font-semibold">Call +91 87704 55678</span>
+                                </a>
+
+                                {/* WhatsApp Button Main */}
                                 <a href="https://wa.me/917697544446" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-4 rounded-xl shadow-lg shadow-green-200 transition-all">
                                     <MessageCircle className="w-5 h-5 fill-current" />
-                                    <span className="font-bold">Chat on WhatsApp</span>
+                                    <span className="font-bold">Chat on WhatsApp (Main)</span>
+                                </a>
+
+                                {/* WhatsApp Button Alt */}
+                                <a href="https://wa.me/918770455678" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-4 rounded-xl shadow-lg shadow-green-200 transition-all">
+                                    <MessageCircle className="w-5 h-5 fill-current" />
+                                    <span className="font-bold">Chat on WhatsApp (Alt)</span>
                                 </a>
 
                                 {/* Instagram Button */}

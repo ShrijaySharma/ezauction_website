@@ -51,18 +51,26 @@ const Hero = () => {
                 >
                     <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs md:text-sm font-medium mx-auto md:mx-0">
                         <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-                        <span>Live Cricket Auctions Made Easy</span>
+                        <span>Multi-Sport Auctions Made Easy</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight">
                         Run Your Auction <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
-                            Like IPL
+                            Like Pro Leagues
                         </span>
                     </h1>
 
+                    <div className="flex flex-wrap gap-2 md:gap-3 justify-center md:justify-start pt-2">
+                        {['🏏 Cricket', '⚽ Football', '🏐 Volleyball', '🏑 Hockey'].map((sport, i) => (
+                            <span key={i} className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-gray-200 shadow-sm backdrop-blur-md hover:bg-white/10 transition-colors cursor-default">
+                                {sport}
+                            </span>
+                        ))}
+                    </div>
+
                     <p className="text-base md:text-xl text-gray-300 max-w-xl leading-relaxed mx-auto md:mx-0">
-                        EzAuction is the professional real-time platform that transforms your local cricket tournament into a world-class bidding experience. Transparent, exciting, and paperless.
+                        EzAuction is the professional real-time platform that transforms your local sports tournaments into a world-class bidding experience. Transparent, exciting, and paperless.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
