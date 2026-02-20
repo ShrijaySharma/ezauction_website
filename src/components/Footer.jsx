@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Twitter, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const Footer = () => {
@@ -27,9 +28,9 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold mb-6">Product</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
-                            <li><a href="#features" className="hover:text-accent transition-colors">Features</a></li>
-                            <li><a href="#pricing" className="hover:text-accent transition-colors">Pricing</a></li>
-                            <li><a href="#gallery" className="hover:text-accent transition-colors">Gallery</a></li>
+                            <li><a href="/#features" className="hover:text-accent transition-colors">Features</a></li>
+                            <li><Link to="/pricing" className="hover:text-accent transition-colors">Pricing</Link></li>
+                            <li><a href="/#gallery" className="hover:text-accent transition-colors">Gallery</a></li>
                             <li><a href="https://app.ezauction.online" className="hover:text-accent transition-colors">Login</a></li>
                         </ul>
                     </div>
@@ -37,19 +38,17 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold mb-6">Company</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
-                            <li><a href="#" className="hover:text-accent transition-colors">About Us</a></li>
-                            <li><a href="#" className="hover:text-accent transition-colors">Careers</a></li>
-                            <li><a href="#" className="hover:text-accent transition-colors">Blog</a></li>
-                            <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
+                            <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
+                            <li><a href="/#contact" className="hover:text-accent transition-colors">Contact</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="font-bold mb-6">Legal</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
-                            <li><a href="#" className="hover:text-accent transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-accent transition-colors">Terms of Service</a></li>
-                            <li><a href="#" className="hover:text-accent transition-colors">Refund Policy</a></li>
+                            <li><Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
+                            <li><Link to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link></li>
+                            <li><Link to="/refund-policy" className="hover:text-accent transition-colors">Refund Policy</Link></li>
                         </ul>
                     </div>
                 </div>
