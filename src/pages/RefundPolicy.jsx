@@ -12,26 +12,35 @@ const RefundPolicy = () => {
                     <h1 className="text-4xl font-bold text-gray-900 mb-8">Refund Policy</h1>
 
                     <div className="prose prose-lg max-w-none space-y-6">
-                        <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Last Updated: [Insert Date]</p>
+                        <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Last Updated: 20 February 2026</p>
 
-                        <p>
-                            We strive to ensure complete satisfaction for all our auction managers and franchise owners. This document outlines the conditions under which refunds are provided.
-                        </p>
+                        <p>EzAuction provides digital auction software services.</p>
 
-                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Eligibility for Refunds</h2>
-                        <p>
-                            [Placeholder: Refunds may be issued if technical disruptions completely prevent the usage of our software during your reserved auction timeframe, assuming the fault lies on our servers.]
-                        </p>
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">1. No Refund After Successful Service</h2>
+                        <p>Once auction service is delivered and working properly, NO refund will be provided.</p>
 
-                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Non-Refundable Circumstances</h2>
-                        <p>
-                            [Placeholder: Refunds are not provided for unused application time if you voluntarily cancel your event or abandon the platform midway through your paid auction period without a valid technical reason.]
-                        </p>
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">2. Refund Eligibility</h2>
+                        <p>Refund may be provided only if:</p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Major technical failure from our side</li>
+                            <li>Service not delivered after payment</li>
+                            <li>Service completely unusable due to our fault</li>
+                        </ul>
+                        <p>Refund is NOT provided for:</p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Change of mind</li>
+                            <li>Auction cancellation by organizer</li>
+                            <li>Internet issues of user</li>
+                            <li>Device issues of user</li>
+                        </ul>
 
-                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">How to Request a Refund</h2>
-                        <p>
-                            [Placeholder: Submit a request via our Contact or WhatsApp lines within 3 days of your auction date detailing the reason for the refund.]
-                        </p>
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">3. Refund Decision</h2>
+                        <p>All refund decisions are made by EzAuction.</p>
+                        <p>Refunds are case-by-case.</p>
+
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">4. Refund Processing Time</h2>
+                        <p>If approved, refund will be processed within:</p>
+                        <p><strong>5–10 business days</strong> via <strong>UPI</strong>.</p>
                     </div>
                 </div>
             </main>
