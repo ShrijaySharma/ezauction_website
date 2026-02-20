@@ -45,7 +45,7 @@ const TermsOfService = () => {
 
                         <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">5. Service Availability</h2>
                         <p>We do not guarantee uninterrupted service.</p>
-                        <p>Temporary downtime may occur.</p>
+                        <p></p>
 
                         <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">6. Limitation of Liability</h2>
                         <p>EzAuction is NOT responsible for:</p>
@@ -65,9 +65,8 @@ const TermsOfService = () => {
                         <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">8. Changes</h2>
                         <p>We can modify terms anytime.</p>
 
-                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">9. Jurisdiction</h2>
-                        <p>These terms are governed by the laws of India.</p>
-                        <p>Jurisdiction: Chhattisgarh, India</p>
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4"></h2>
+                        <p></p>
                     </div>
                 </div>
             </main>

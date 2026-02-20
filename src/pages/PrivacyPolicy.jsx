@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
                         <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Last Updated: 20 February 2026</p>
 
                         <p>
-                            Welcome to EzAuction ("we," "our," or "us"). Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website and auction services available at <a href="https://ezauction.online" className="text-primary hover:underline">https://ezauction.online</a>.
+                            Welcome to EzAuction. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website and auction services available at <a href="https://ezauction.online" className="text-primary hover:underline">https://ezauction.online</a>.
                         </p>
 
                         <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">1. Information We Collect</h2>

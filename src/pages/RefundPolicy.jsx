@@ -40,7 +40,7 @@ const RefundPolicy = () => {
 
                         <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">4. Refund Processing Time</h2>
                         <p>If approved, refund will be processed within:</p>
-                        <p><strong>5–10 business days</strong> via <strong>UPI</strong>.</p>
+                        <p><strong>3–5 business days</strong> via <strong>UPI</strong>.</p>
                     </div>
                 </div>
             </main>

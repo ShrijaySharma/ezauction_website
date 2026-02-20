@@ -78,7 +78,7 @@ const Gallery = () => {
                             </div>
                             <h3 className="text-2xl font-bold text-gray-800 mb-2">Parshuram Cup Cricket Auction</h3>
                             <p className="text-gray-500 leading-relaxed">
-                                A high-stakes regional auction with real-time bidding for 10 franchises.
+                                A high-stakes regional auction with real-time bidding for 18 franchises.
                             </p>
                             <div className="mt-6 flex items-center text-sm font-medium text-purple-600">
                                 <span>Regional Cricket Tournament</span>
