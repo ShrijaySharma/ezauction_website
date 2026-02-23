@@ -60,7 +60,7 @@ const Navbar = () => {
                         <button
                             key={link.name}
                             onClick={() => handleNavClick(link.href)}
-                            className={`text-xl font-bold tracking-wide transition-all duration-300 transform hover:scale-110 hover:text-accent ${isScrolled || location.pathname !== '/' ? 'text-textDark' : 'text-white/90'
+                            className={`text-xl font-black tracking-tighter uppercase italic transition-all duration-300 transform hover:scale-110 hover:text-accent ${isScrolled || location.pathname !== '/' ? 'text-textDark' : 'text-white/90'
                                 }`}
                         >
                             {link.name}

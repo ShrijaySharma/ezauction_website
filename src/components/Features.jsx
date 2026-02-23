@@ -44,12 +44,13 @@ const features = [
 const Features = () => {
     return (
         <section id="features" className="py-24 bg-gray-50 relative overflow-hidden">
+            <div className="absolute inset-0 sport-grid opacity-10 pointer-events-none" />
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-3xl md:text-5xl font-bold text-primary">
-                        Powerful Features for <br /> Professional Auctions
+                    <h2 className="text-4xl md:text-6xl font-black text-primary uppercase italic tracking-tighter">
+                        Powerful Features for <br /> <span className="text-accent">Professional</span> Auctions
                     </h2>
-                    <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+                    <p className="text-gray-500 max-w-2xl mx-auto text-lg font-medium">
                         Everything you need to run a seamless, high-stakes sports auction (Cricket, Football, Volleyball, Hockey) powered by modern technology.
                     </p>
                 </div>

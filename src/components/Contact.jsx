@@ -50,7 +50,7 @@ const Contact = () => {
 
                         {/* Content Side */}
                         <div className="p-12 flex flex-col justify-center items-center text-center">
-                            <h3 className="text-2xl font-bold text-gray-800 mb-8">Connect With Us</h3>
+                            <h3 className="text-3xl font-black text-gray-800 mb-8 uppercase italic tracking-tighter">Connect <span className="text-accent border-b-4 border-accent">With Us</span></h3>
 
                             <div className="flex flex-col gap-4 w-full max-w-xs">
                                 {/* Phone Button Main */}

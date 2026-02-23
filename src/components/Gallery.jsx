@@ -30,12 +30,13 @@ const galleryItems = [
 
 const Gallery = () => {
     return (
-        <section id="gallery" className="py-24 bg-white">
-            <div className="container mx-auto px-6">
+        <section id="gallery" className="py-24 bg-white relative overflow-hidden">
+            <div className="absolute inset-0 sport-grid opacity-5 pointer-events-none" />
+            <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-12">
-                    <span className="text-accent font-semibold tracking-wider text-sm uppercase">Success Stories</span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">
-                        Auctions Powered by EzAuction
+                    <span className="text-accent font-black tracking-widest text-sm uppercase italic border-b-2 border-accent pb-1">Success Stories</span>
+                    <h2 className="text-4xl md:text-6xl font-black text-primary mt-6 uppercase italic tracking-tighter">
+                        Auctions <span className="text-accent">Powered</span> by EzAuction
                     </h2>
                 </div>
 

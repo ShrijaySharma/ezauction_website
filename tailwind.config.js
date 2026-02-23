@@ -7,14 +7,20 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
       },
       colors: {
         primary: "#020617", // Dark Slate / Near Black
-        accent: "#4F46E5",  // Indigo-600
-        secondary: "#7C3AED", // Violet-600
+        accent: "#3b82f6",  // Blue-500 (More vibrant than indigo for sports)
+        secondary: "#8b5cf6", // Violet-500
         background: "#F8FAFC", // Slate-50
         textDark: "#0F172A", // Slate-900
+        league: {
+          blue: "#2563eb",
+          gold: "#f59e0b",
+          red: "#dc2626",
+          green: "#16a34a"
+        }
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

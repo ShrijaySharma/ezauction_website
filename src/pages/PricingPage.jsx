@@ -1,8 +1,17 @@
 import React from 'react';
 import { Check, X, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const PricingPage = () => {
+    const navigate = useNavigate();
+
+    const handlePlanSelect = () => {
+        navigate('/#contact');
+        setTimeout(() => {
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    };
     const plans = [
         {
             name: "Basic Access",
@@ -95,17 +104,18 @@ const PricingPage = () => {
                             <tr className="bg-gray-50 border-b border-gray-200">
                                 <th className="p-6 text-gray-500 font-medium w-1/4">Features</th>
                                 {plans.map((plan, index) => (
-                                    <th key={index} className={`p-6 text-center w-1/4 ${plan.highlight ? 'bg-blue-50/50' : ''}`}>
-                                        <div className="flex flex-col items-center">
+                                    <th key={index} className={`p-8 text-center w-1/4 relative overflow-hidden ${plan.highlight ? 'bg-blue-50/80 border-x-2 border-accent/20' : ''}`}>
+                                        <div className="flex flex-col items-center relative z-10">
                                             {plan.tag && (
-                                                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase mb-2 ${plan.name === "Premium Managed" ? "bg-accent text-white" : "bg-primary text-white"}`}>
+                                                <span className={`text-[10px] font-black px-3 py-1 rounded-full uppercase mb-3 tracking-widest ${plan.name === "Premium Managed" ? "bg-secondary text-white shadow-lg" : "bg-accent text-white shadow-lg"}`}>
                                                     {plan.tag}
                                                 </span>
                                             )}
-                                            <h3 className="text-xl font-bold text-gray-800">{plan.name}</h3>
-                                            <p className="text-primary text-2xl font-bold mt-2">{plan.price}</p>
-                                            <span className="text-xs text-gray-400 font-normal">/ auction</span>
+                                            <h3 className="text-2xl font-black text-primary uppercase italic tracking-tighter">{plan.name.split(" ")[0]}</h3>
+                                            <p className="text-accent text-4xl font-black mt-2 tracking-tighter">{plan.price}</p>
+                                            <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">/ auction</span>
                                         </div>
+                                        {plan.highlight && <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 -rotate-45 translate-x-10 -translate-y-10" />}
                                     </th>
                                 ))}
                             </tr>
@@ -143,15 +153,15 @@ const PricingPage = () => {
                                 {plans.map((plan, index) => (
                                     <td key={index} className={`p-6 text-center ${plan.highlight ? 'bg-blue-50/50' : ''}`}>
                                         <button
-                                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                            className={`w-full py-3 rounded-xl font-bold transition-all shadow-md ${plan.name === "Premium Managed"
-                                                ? "bg-accent text-white hover:bg-blue-600"
+                                            onClick={handlePlanSelect}
+                                            className={`w-full py-4 rounded-xl font-black uppercase tracking-wider transition-all shadow-xl hover:scale-105 active:scale-95 ${plan.name.includes("Premium")
+                                                ? "bg-gradient-to-r from-accent to-secondary text-white"
                                                 : plan.highlight
-                                                    ? "bg-primary text-white hover:bg-blue-700"
-                                                    : "bg-white border text-gray-700 hover:bg-gray-50"
+                                                    ? "bg-primary text-white border-2 border-accent"
+                                                    : "bg-white border-2 border-gray-200 text-gray-700 hover:border-accent"
                                                 }`}
                                         >
-                                            Choose {plan.name.split(" ")[0]}
+                                            Get {plan.name.split(" ")[0]}
                                         </button>
                                     </td>
                                 ))}
@@ -196,15 +206,15 @@ const PricingPage = () => {
                                 ))}
                             </ul>
                             <button
-                                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                className={`w-full py-3 rounded-xl font-bold text-sm transition-all ${plan.name === "Premium Managed"
-                                    ? "bg-accent text-white"
+                                onClick={handlePlanSelect}
+                                className={`w-full py-4 rounded-xl font-black uppercase tracking-wider transition-all shadow-lg ${plan.name.includes("Premium")
+                                    ? "bg-gradient-to-r from-accent to-secondary text-white"
                                     : plan.highlight
                                         ? "bg-primary text-white"
-                                        : "bg-gray-100 text-gray-700"
+                                        : "bg-gray-100 text-gray-700 border-2 border-transparent"
                                     }`}
                             >
-                                Choose Plan
+                                Select Plan
                             </button>
                         </div>
                     ))}

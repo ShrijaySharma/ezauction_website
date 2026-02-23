@@ -1,14 +1,27 @@
 import React from 'react';
 import { Check, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Pricing = () => {
+    const navigate = useNavigate();
+
+    const handlePlanSelect = () => {
+        navigate('/#contact');
+        setTimeout(() => {
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    };
+
     return (
         <section id="pricing" className="py-24 bg-gray-50 relative overflow-hidden">
+            <div className="absolute inset-0 sport-grid opacity-20 pointer-events-none" />
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">Simple, transparent pricing</h2>
-                    <p className="text-gray-500 text-lg">Everything you need for a successful auction.</p>
+                    <h2 className="text-4xl md:text-6xl font-black text-primary mb-4 italic uppercase tracking-tighter">
+                        Simple, <span className="text-accent">transparent</span> pricing
+                    </h2>
+                    <p className="text-gray-500 text-lg font-medium">Everything you need for a successful auction.</p>
                 </div>
 
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-7xl mx-auto">
@@ -58,8 +71,8 @@ const Pricing = () => {
                             </ul>
 
                             <button
-                                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="w-full py-3 rounded-xl border border-gray-300 text-gray-600 font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
+                                onClick={handlePlanSelect}
+                                className="w-full py-3 rounded-xl border-2 border-gray-200 text-gray-700 font-black uppercase tracking-wider hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
                             >
                                 Choose Basic
                             </button>
@@ -99,8 +112,8 @@ const Pricing = () => {
                             </ul>
 
                             <button
-                                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="w-full py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg"
+                                onClick={handlePlanSelect}
+                                className="w-full py-3 rounded-xl bg-primary text-white font-black uppercase tracking-wider hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg"
                             >
                                 Choose Standard
                             </button>
@@ -140,8 +153,8 @@ const Pricing = () => {
                             </ul>
 
                             <button
-                                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="w-full py-3 rounded-xl bg-accent text-white font-bold hover:bg-indigo-600 transition-colors shadow-md flex items-center justify-center gap-2"
+                                onClick={handlePlanSelect}
+                                className="w-full py-3 rounded-xl bg-accent text-white font-black uppercase tracking-wider hover:bg-blue-600 transition-colors shadow-md flex items-center justify-center gap-2"
                             >
                                 <Star className="w-4 h-4 fill-current" />
                                 Book Premium

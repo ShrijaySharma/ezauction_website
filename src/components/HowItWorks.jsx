@@ -27,11 +27,11 @@ const HowItWorks = () => {
         <section className="py-24 bg-primary text-white relative overflow-hidden">
             {/* Background decorative blob */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-accent/20 rounded-full blur-3xl opacity-30" />
+            <div className="absolute inset-0 sport-grid opacity-20 pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-20">
-                    <h2 className="text-3xl md:text-5xl font-bold">How It Works</h2>
-                    <div className="w-20 h-1 bg-accent mx-auto mt-6 rounded-full" />
+                    <h2 className="text-4xl md:text-7xl font-black uppercase italic tracking-tighter">How It <span className="text-accent underline decoration-accent underline-offset-8">Works</span></h2>
                 </div>
 
                 <div className="relative grid md:grid-cols-3 gap-12">

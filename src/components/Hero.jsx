@@ -35,10 +35,15 @@ const Hero = () => {
     return (
         <section id="home" className="relative w-full min-h-screen flex items-center pt-20 overflow-hidden bg-primary">
             {/* Background Elements */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 overflow-hidden">
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+                <div className="absolute inset-0 sport-grid opacity-30" />
+
+                {/* Skewed Decorative Stripe */}
+                <div className="absolute -right-20 top-0 h-full w-32 bg-accent/10 skew-x-[-15deg] hidden lg:block" />
+                <div className="absolute -right-40 top-0 h-full w-24 bg-white/5 skew-x-[-15deg] hidden lg:block" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
@@ -54,10 +59,11 @@ const Hero = () => {
                         <span>Multi-Sport Auctions Made Easy</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight">
-                        Run Your Auction <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
-                            Like Pro Leagues
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[1] tracking-tighter uppercase italic">
+                        Run Your <br />
+                        <span className="text-white drop-shadow-[0_5px_15px_rgba(59,130,246,0.5)]">Auction</span> <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400">
+                            LIKE PRO LEAGUES
                         </span>
                     </h1>
 
