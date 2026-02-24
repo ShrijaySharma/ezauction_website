@@ -26,7 +26,7 @@ const HowItWorks = () => {
     return (
         <section className="py-24 bg-primary text-white relative overflow-hidden">
             {/* Background decorative blob */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-accent/20 rounded-full blur-3xl opacity-30" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-accent/20 rounded-full blur-2xl md:blur-3xl opacity-30 will-change-transform pointer-events-none" />
             <div className="absolute inset-0 sport-grid opacity-20 pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">

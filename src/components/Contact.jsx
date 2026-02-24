@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <section id="contact" className="py-24 bg-white relative">
             {/* Background blobs */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-2xl md:blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 will-change-transform pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
@@ -44,8 +44,8 @@ const Contact = () => {
                             </div>
 
                             {/* Decorative Circles */}
-                            <div className="absolute bottom-[-50px] right-[-50px] w-40 h-40 bg-accent rounded-full opacity-50 blur-2xl" />
-                            <div className="absolute top-[-50px] left-[-50px] w-40 h-40 bg-secondary rounded-full opacity-50 blur-2xl" />
+                            <div className="absolute bottom-[-50px] right-[-50px] w-40 h-40 bg-accent rounded-full opacity-50 blur-xl md:blur-2xl will-change-transform pointer-events-none" />
+                            <div className="absolute top-[-50px] left-[-50px] w-40 h-40 bg-secondary rounded-full opacity-50 blur-xl md:blur-2xl will-change-transform pointer-events-none" />
                         </div>
 
                         {/* Content Side */}

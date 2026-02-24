@@ -13,7 +13,7 @@ const Navbar = () => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -25,7 +25,7 @@ const Navbar = () => {
                 setTimeout(() => {
                     const element = document.getElementById(href.substring(1));
                     element?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
+                }, 50);
             } else {
                 const element = document.getElementById(href.substring(1));
                 element?.scrollIntoView({ behavior: 'smooth' });
@@ -45,7 +45,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || location.pathname !== '/' ? 'bg-white/90 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'
+            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || location.pathname !== '/' ? 'bg-white/90 backdrop-blur-sm md:backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">

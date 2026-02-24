@@ -45,6 +45,7 @@ const Gallery = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
                         whileHover={{ scale: 1.02 }}
                         transition={{ duration: 0.3 }}
                         className="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-white border border-gray-100"
@@ -68,6 +69,7 @@ const Gallery = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
                         whileHover={{ scale: 1.02 }}
                         transition={{ duration: 0.3, delay: 0.1 }}
                         className="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-white border border-gray-100"

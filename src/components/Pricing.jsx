@@ -10,7 +10,7 @@ const Pricing = () => {
         navigate('/#contact');
         setTimeout(() => {
             document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+        }, 50);
     };
 
     return (

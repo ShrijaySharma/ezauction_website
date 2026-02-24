@@ -14,8 +14,8 @@ const FloatingSports = () => {
             {sportsData.map((sport, index) => (
                 <motion.div
                     key={index}
-                    className={`absolute flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br ${sport.color} bg-opacity-20 backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)]`}
-                    style={{ top: sport.top, left: sport.left, right: sport.right, bottom: sport.bottom, opacity: 0.8 }}
+                    className={`absolute flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br ${sport.color} bg-opacity-20 backdrop-blur-sm md:backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)]`}
+                    style={{ top: sport.top, left: sport.left, right: sport.right, bottom: sport.bottom, opacity: 0.8, willChange: 'transform' }}
                     animate={{
                         y: [0, -30, 0],
                         rotate: [0, 15, -15, 0],
