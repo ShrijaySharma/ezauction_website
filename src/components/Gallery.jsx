@@ -87,29 +87,31 @@ const Gallery = () => {
                                 <span>Regional Cricket Tournament</span>
                             </div>
                         </div>
-                        {/* Khalsa Champions League (KCL) */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ scale: 1.02 }}
-                            transition={{ duration: 0.3, delay: 0.2 }}
-                            className="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-white border border-gray-100 md:col-span-2 lg:col-span-1 max-w-xl mx-auto w-full"
-                        >
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-500" />
-                            <div className="p-8 h-full flex flex-col justify-center">
-                                <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mb-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg>
-                                </div>
-                                <h3 className="text-2xl font-bold text-gray-800 mb-2">Khalsa Champions League (KCL)</h3>
-                                <p className="text-gray-500 leading-relaxed">
-                                    Successfully conducted auction for 8 teams with 12 players per team, fully managed without any issues.
-                                </p>
-                                <div className="mt-6 flex items-center text-sm font-medium text-green-600">
-                                    <span>Premium League Auction</span>
-                                </div>
+                    </motion.div>
+
+                    {/* Khalsa Champions League (KCL) */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                        className="relative group h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-white border border-gray-100 md:col-span-2 lg:col-span-1 max-w-xl mx-auto w-full"
+                    >
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-500" />
+                        <div className="p-8 h-full flex flex-col justify-center">
+                            <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg>
                             </div>
-                        </motion.div>
+                            <h3 className="text-2xl font-bold text-gray-800 mb-2">Khalsa Champions League (KCL)</h3>
+                            <p className="text-gray-500 leading-relaxed">
+                                Successfully conducted auction for 8 teams with 12 players per team, fully managed without any issues.
+                            </p>
+                            <div className="mt-6 flex items-center text-sm font-medium text-green-600">
+                                <span>Premium League Auction</span>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
