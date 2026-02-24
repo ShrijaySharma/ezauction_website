@@ -21,11 +21,7 @@ const Navbar = () => {
         setIsMobileMenuOpen(false);
         if (href.startsWith('#')) {
             if (location.pathname !== '/') {
-                navigate('/');
-                setTimeout(() => {
-                    const element = document.getElementById(href.substring(1));
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                }, 50);
+                window.location.href = '/' + href;
             } else {
                 const element = document.getElementById(href.substring(1));
                 element?.scrollIntoView({ behavior: 'smooth' });

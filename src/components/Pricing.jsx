@@ -7,10 +7,7 @@ const Pricing = () => {
     const navigate = useNavigate();
 
     const handlePlanSelect = () => {
-        navigate('/#contact');
-        setTimeout(() => {
-            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-        }, 50);
+        window.location.href = '/#contact';
     };
 
     return (
