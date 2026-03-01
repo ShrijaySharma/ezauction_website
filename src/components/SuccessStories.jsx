@@ -17,6 +17,13 @@ const stories = [
         date: "JAN 2026",
         description: "A high-stakes regional auction with real-time bidding for 18 franchises.",
         gradient: "from-purple-500 to-pink-500"
+    },
+    {
+        title: "Gayatri Premier League 2026",
+        role: "Premier Cricket League",
+        date: "FEB 2026",
+        description: "Seamlessly orchestrated an auction for 12 teams with 11 players each — zero glitches, zero delays, purely smooth execution from start to finish.",
+        gradient: "from-emerald-500 to-teal-500"
     }
 ];
 
