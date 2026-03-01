@@ -23,7 +23,7 @@ const stories = [
         role: "Premier Cricket League",
         date: "FEB 2026",
         description: "Seamlessly orchestrated an auction for 12 teams with 11 players each — zero glitches, zero delays, purely smooth execution from start to finish.",
-        gradient: "from-emerald-500 to-teal-500"
+        gradient: "from-green-500 to-emerald-500"
     }
 ];
 
