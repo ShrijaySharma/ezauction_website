@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
-import Gallery from '../components/Gallery';
+import SuccessStories from '../components/SuccessStories';
 import HowItWorks from '../components/HowItWorks';
 import CTASection from '../components/CTASection';
 import Contact from '../components/Contact';
@@ -14,7 +14,7 @@ const Home = () => {
             <Navbar />
             <Hero />
             <Features />
-            <Gallery />
+            <SuccessStories />
             <HowItWorks />
             {/* Pricing Section Removed from Home Page */}
             <CTASection />

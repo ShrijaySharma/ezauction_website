@@ -24,12 +24,19 @@ const stories = [
         date: "FEB 2026",
         description: "Seamlessly orchestrated an auction for 12 teams with 11 players each — zero glitches, zero delays, purely smooth execution from start to finish.",
         gradient: "from-green-500 to-emerald-500"
+    },
+    {
+        title: "Khalsa Champions League (KCL)",
+        role: "Premium League Auction",
+        date: "MAR 2026",
+        description: "Successfully conducted auction for 8 teams with 12 players per team, fully managed without any issues.",
+        gradient: "from-orange-500 to-yellow-500"
     }
 ];
 
 const SuccessStories = () => {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section id="gallery" className="py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-accent font-semibold tracking-wider text-sm uppercase">Track Record</span>
