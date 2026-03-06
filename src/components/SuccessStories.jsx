@@ -43,14 +43,14 @@ const SuccessStories = () => {
                     <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Recent Success Stories</h2>
                 </div>
 
-                <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+                <div className="flex flex-col lg:flex-row items-center gap-12 max-w-7xl mx-auto">
                     {/* 3D Model Column */}
-                    <div className="w-full lg:w-1/3 relative h-[300px] lg:h-[400px] flex justify-center items-center">
-                        <CricketModel className="w-full max-w-[400px] h-full z-10" />
+                    <div className="w-full lg:w-1/4 relative h-[250px] lg:h-[300px] flex justify-center items-center">
+                        <CricketModel className="w-full max-w-[300px] h-full z-10" />
                     </div>
 
                     {/* Stories Grid */}
-                    <div className="grid md:grid-cols-2 gap-8 w-full lg:w-2/3">
+                    <div className="grid md:grid-cols-2 gap-8 w-full lg:w-3/4">
                         {stories.map((story, index) => (
                             <motion.div
                                 key={index}
