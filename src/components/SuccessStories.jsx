@@ -31,6 +31,20 @@ const stories = [
         date: "MAR 2026",
         description: "Successfully conducted auction for 8 teams with 12 players per team, fully managed without any issues.",
         gradient: "from-orange-500 to-yellow-500"
+    },
+    {
+        title: "NV Legends League",
+        role: "Pro-Am Cricket League",
+        date: "APR 2026",
+        description: "A spectacular event featuring 6 competitive teams and over 100 passionate players, delivering a thrilling and flawlessly executed auction experience.",
+        gradient: "from-indigo-500 to-violet-500"
+    },
+    {
+        title: "Junior Cricket Box League",
+        role: "Youth Cricket Tournament",
+        date: "APR 2026",
+        description: "Empowering the next generation of talent, this exciting box cricket league auction seamlessly managed 6 dynamic franchises with precision and flair.",
+        gradient: "from-rose-500 to-red-500"
     }
 ];
 
