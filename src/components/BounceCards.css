@@ -56,9 +56,49 @@
   }
 }
 
-/* Mobile is now handled gracefully inside React component. Clean up unused CSS. */
+/* Elegant Mobile Horizontal Scroll */
 @media (max-width: 768px) {
   .bounceCardsContainer {
-     display: none; /* Hide container on small screens just in case to be safe but React handles DOM */
+    transform: none !important;
+    perspective: none !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 1.25rem;
+    padding: 2rem 1.5rem !important; /* add generous padding to prevent shadow clipping */
+    justify-content: flex-start;
+    align-items: center !important; /* Center items instead of stretch so shadow isnt cut */
+    height: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    
+    /* Hide scrollbar for cleaner look but keep functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .bounceCardsContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    position: relative !important;
+    transform: none !important;
+    flex: 0 0 85% !important; /* Width of each card */
+    max-width: 340px;
+    height: 480px !important; /* Fixed height to prevent collapse */
+    scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Improve scroll performance */
+    will-change: transform;
+    transition: transform 0.3s ease;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+     flex: 0 0 90% !important;
+     height: 460px !important;
   }
 }

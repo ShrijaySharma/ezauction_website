@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './BounceCards.css';
 
@@ -20,22 +20,12 @@ export default function BounceCards({
   enableHover = true
 }) {
   const containerRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detect mobile width to switch to simpler vertical stacking
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useEffect(() => {
-    if (isMobile) return; // Disable GSAP intro on mobile for performance
-    
-    const ctx = gsap.context(() => {
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      // Desktop animation
       gsap.fromTo(
         '.desktop-card',
         { scale: 0 },
@@ -46,9 +36,10 @@ export default function BounceCards({
           delay: animationDelay
         }
       );
-    }, containerRef);
-    return () => ctx.revert();
-  }, [animationStagger, easeType, animationDelay, items.length, isMobile]);
+    });
+
+    return () => mm.revert();
+  }, [animationStagger, easeType, animationDelay, items.length]);
 
   const getNoRotationTransform = transformStr => {
     const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr);
@@ -74,7 +65,7 @@ export default function BounceCards({
   };
 
   const pushSiblings = hoveredIdx => {
-    if (!enableHover || !containerRef.current || isMobile) return;
+    if (!enableHover || !containerRef.current || window.innerWidth < 768) return;
 
     const q = gsap.utils.selector(containerRef);
 
@@ -115,7 +106,7 @@ export default function BounceCards({
   };
 
   const resetSiblings = () => {
-    if (!enableHover || !containerRef.current || isMobile) return;
+    if (!enableHover || !containerRef.current || window.innerWidth < 768) return;
 
     const q = gsap.utils.selector(containerRef);
 
@@ -134,29 +125,9 @@ export default function BounceCards({
     });
   };
 
-  // Mobile Render
-  if (isMobile) {
-    return (
-      <div className={`w-full flex flex-col gap-6 px-4 ${className}`}>
-        {items.map((item, idx) => (
-          <div
-            key={idx}
-            className="w-full relative rounded-[30px] overflow-hidden flex flex-col bg-slate-900 border border-white/10 shadow-xl"
-            style={{ 
-              minHeight: '380px' 
-            }}
-          >
-             {item}
-          </div>
-        ))}
-      </div>
-    );
-  }
-
-  // Desktop Render
   return (
     <div
-      className={`bounceCardsContainer ${className}`}
+      className={`bounceCardsContainer flex bg-transparent ${className}`}
       ref={containerRef}
       style={{
         width: containerWidth,
@@ -167,19 +138,15 @@ export default function BounceCards({
       {items.map((item, idx) => (
         <div
           key={idx}
-          className={`card desktop-card card-${idx}`}
+          className={`card desktop-card card-${idx} shrink-0`}
           style={{
-            transform: transformStyles[idx] ?? 'none',
+            transform: window.innerWidth >= 768 ? (transformStyles[idx] ?? 'none') : 'none',
             zIndex: items.length - idx
           }}
           onMouseEnter={() => pushSiblings(idx)}
           onMouseLeave={resetSiblings}
         >
-          {typeof item === 'string' ? (
-            <img className="image" src={item} alt={`card-${idx}`} />
-          ) : (
-            item
-          )}
+          {item}
         </div>
       ))}
     </div>
