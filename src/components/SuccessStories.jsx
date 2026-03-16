@@ -51,55 +51,67 @@ const stories = [
 const SuccessStories = () => {
     // Defines transforms for 6 cards spacing them evenly
     const transformStyles = [
-        "rotate(15deg) translate(-320px)",
-        "rotate(9deg) translate(-190px)",
-        "rotate(3deg) translate(-60px)",
-        "rotate(-3deg) translate(60px)",
-        "rotate(-9deg) translate(190px)",
-        "rotate(-15deg) translate(320px)"
+        "rotate(12deg) translate(-360px) translateY(10px)",
+        "rotate(7deg) translate(-216px) translateY(5px)",
+        "rotate(2deg) translate(-72px)",
+        "rotate(-2deg) translate(72px)",
+        "rotate(-7deg) translate(216px) translateY(5px)",
+        "rotate(-12deg) translate(360px) translateY(10px)"
     ];
 
     const storyCards = stories.map((story, index) => (
-        <div key={index} className="w-full h-full relative overflow-hidden flex flex-col group rounded-3xl">
+        <div key={index} className="w-full h-full relative overflow-hidden flex flex-col group rounded-[30px] border border-white/10 bg-slate-900 shadow-2xl">
+            {/* Left Accent line */}
             <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${story.gradient} z-20`} />
-            <div className={`card-background bg-gradient-to-br ${story.gradient}`} />
-            <div className="card-content flex flex-col bg-white">
-                <div className="flex items-start justify-between mb-4">
-                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${story.gradient} flex items-center justify-center text-white shadow-lg`}>
-                        <Trophy className="w-6 h-6" />
+            
+            {/* Background ambient glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent z-10 pointer-events-none" />
+            <div className={`card-background bg-gradient-to-br ${story.gradient} opacity-20 pointer-events-none`} />
+            
+            <div className="card-content flex flex-col relative z-30 p-8 h-full">
+                <div className="flex items-start justify-between mb-6">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${story.gradient} flex items-center justify-center text-white shadow-lg ring-1 ring-white/20`}>
+                        <Trophy className="w-7 h-7" />
                     </div>
-                    <div className="flex items-center text-gray-400 text-sm font-medium">
-                        <Calendar className="w-4 h-4 mr-1" />
+                    <div className="flex items-center text-slate-300 text-sm font-medium bg-white/10 px-3 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
+                        <Calendar className="w-4 h-4 mr-1.5 opacity-80" />
                         {story.date}
                     </div>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2 leading-tight">{story.title}</h3>
-                <div className="text-xs md:text-sm font-bold text-accent mb-4 uppercase tracking-wide">{story.role}</div>
-                <p className="text-gray-500 leading-relaxed text-sm">
-                    {story.description}
-                </p>
+                <div className="mt-auto mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-3 leading-tight tracking-tight drop-shadow-md">{story.title}</h3>
+                    <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-accent mb-4 uppercase tracking-wider">{story.role}</div>
+                    <p className="text-slate-400 leading-relaxed text-sm font-medium">
+                        {story.description}
+                    </p>
+                </div>
 
-                <div className={`absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br ${story.gradient} rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity`} />
+                {/* Bottom right glow */}
+                <div className={`absolute -bottom-8 -right-8 w-40 h-40 bg-gradient-to-br ${story.gradient} rounded-full blur-[40px] opacity-30 group-hover:opacity-50 transition-all duration-500`} />
             </div>
         </div>
     ));
 
     return (
-        <section id="gallery" className="py-24 bg-gray-50 relative overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-16 relative z-10">
-                    <span className="text-accent font-semibold tracking-wider text-sm uppercase">Track Record</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-4">Recent Success Stories</h2>
-                    <p className="text-gray-500 max-w-2xl mx-auto">Hover over the cards to explore our flawlessly executed premium cricket and pro-am league auction events.</p>
+        <section id="gallery" className="py-24 bg-slate-950 relative overflow-hidden">
+            {/* Background elements */}
+            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-20 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="text-center mb-20">
+                    <span className="text-accent font-semibold tracking-widest text-sm uppercase bg-accent/10 text-accent px-4 py-1.5 rounded-full ring-1 ring-accent/20">Track Record</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mt-6 mb-4 tracking-tight drop-shadow-sm">Recent Success Stories</h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto text-lg">Hover over the cards to explore our flawlessly executed premium cricket and pro-am league auction events.</p>
                 </div>
 
-                <div className="flex justify-center items-center w-full max-w-[100vw] overflow-x-hidden pt-10 pb-20">
+                <div className="flex justify-center items-center w-full max-w-[100vw] overflow-visible pt-16 pb-24">
                     <BounceCards
                         items={storyCards}
                         transformStyles={transformStyles}
                         containerWidth="100%"
-                        containerHeight={450}
+                        containerHeight={580}
                         easeType="back.out(1.2)"
                         animationDelay={0.2}
                     />
