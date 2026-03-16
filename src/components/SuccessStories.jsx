@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trophy, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
-import CricketModel from './CricketModel';
+import BounceCards from './BounceCards';
 
 const stories = [
     {
@@ -22,7 +22,7 @@ const stories = [
         title: "Gayatri Premier League 2026",
         role: "Premier Cricket League",
         date: "FEB 2026",
-        description: "Seamlessly orchestrated an auction for 12 teams with 11 players each — zero glitches, zero delays, purely smooth execution from start to finish.",
+        description: "Seamlessly orchestrated an auction for 12 teams with 11 players each — zero glitches, zero delays.",
         gradient: "from-green-500 to-emerald-500"
     },
     {
@@ -36,67 +36,73 @@ const stories = [
         title: "NV Legends League",
         role: "Pro-Am Cricket League",
         date: "APR 2026",
-        description: "A spectacular event featuring 6 competitive teams and over 100 passionate players, delivering a thrilling and flawlessly executed auction experience.",
+        description: "A spectacular event featuring 6 competitive teams and over 100 passionate players, delivering a thrilling execution.",
         gradient: "from-indigo-500 to-violet-500"
     },
     {
         title: "Junior Cricket Box League",
         role: "Youth Cricket Tournament",
         date: "APR 2026",
-        description: "Empowering the next generation of talent, this exciting box cricket league auction seamlessly managed 6 dynamic franchises with precision and flair.",
+        description: "Empowering next-gen talent, this box cricket league auction seamlessly managed 6 dynamic franchises.",
         gradient: "from-rose-500 to-red-500"
     }
 ];
 
 const SuccessStories = () => {
-    return (
-        <section id="gallery" className="py-24 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <span className="text-accent font-semibold tracking-wider text-sm uppercase">Track Record</span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Recent Success Stories</h2>
+    // Defines transforms for 6 cards spacing them evenly
+    const transformStyles = [
+        "rotate(15deg) translate(-320px)",
+        "rotate(9deg) translate(-190px)",
+        "rotate(3deg) translate(-60px)",
+        "rotate(-3deg) translate(60px)",
+        "rotate(-9deg) translate(190px)",
+        "rotate(-15deg) translate(320px)"
+    ];
+
+    const storyCards = stories.map((story, index) => (
+        <div key={index} className="w-full h-full relative overflow-hidden flex flex-col group rounded-3xl">
+            <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${story.gradient} z-20`} />
+            <div className={`card-background bg-gradient-to-br ${story.gradient}`} />
+            <div className="card-content flex flex-col bg-white">
+                <div className="flex items-start justify-between mb-4">
+                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${story.gradient} flex items-center justify-center text-white shadow-lg`}>
+                        <Trophy className="w-6 h-6" />
+                    </div>
+                    <div className="flex items-center text-gray-400 text-sm font-medium">
+                        <Calendar className="w-4 h-4 mr-1" />
+                        {story.date}
+                    </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row items-center gap-12 max-w-7xl mx-auto">
-                    {/* 3D Model Column */}
-                    <div className="w-full lg:w-1/4 relative h-[250px] lg:h-[300px] flex justify-center items-center">
-                        <CricketModel className="w-full max-w-[300px] h-full z-10" />
-                    </div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2 leading-tight">{story.title}</h3>
+                <div className="text-xs md:text-sm font-bold text-accent mb-4 uppercase tracking-wide">{story.role}</div>
+                <p className="text-gray-500 leading-relaxed text-sm">
+                    {story.description}
+                </p>
 
-                    {/* Stories Grid */}
-                    <div className="grid md:grid-cols-2 gap-8 w-full lg:w-3/4">
-                        {stories.map((story, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -5 }}
-                                className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all relative overflow-hidden group"
-                            >
-                                <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${story.gradient}`} />
+                <div className={`absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br ${story.gradient} rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity`} />
+            </div>
+        </div>
+    ));
 
-                                <div className="flex items-start justify-between mb-6">
-                                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${story.gradient} flex items-center justify-center text-white shadow-lg`}>
-                                        <Trophy className="w-6 h-6" />
-                                    </div>
-                                    <div className="flex items-center text-gray-400 text-sm">
-                                        <Calendar className="w-4 h-4 mr-1" />
-                                        {story.date}
-                                    </div>
-                                </div>
+    return (
+        <section id="gallery" className="py-24 bg-gray-50 relative overflow-hidden">
+            <div className="container mx-auto px-6">
+                <div className="text-center mb-16 relative z-10">
+                    <span className="text-accent font-semibold tracking-wider text-sm uppercase">Track Record</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-4">Recent Success Stories</h2>
+                    <p className="text-gray-500 max-w-2xl mx-auto">Hover over the cards to explore our flawlessly executed premium cricket and pro-am league auction events.</p>
+                </div>
 
-                                <h3 className="text-2xl font-bold text-gray-800 mb-2">{story.title}</h3>
-                                <div className="text-sm font-semibold text-accent mb-4 uppercase tracking-wide">{story.role}</div>
-                                <p className="text-gray-500 leading-relaxed">
-                                    {story.description}
-                                </p>
-
-                                <div className={`absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br ${story.gradient} rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity`} />
-                            </motion.div>
-                        ))}
-                    </div>
+                <div className="flex justify-center items-center w-full max-w-[100vw] overflow-x-hidden pt-10 pb-20">
+                    <BounceCards
+                        items={storyCards}
+                        transformStyles={transformStyles}
+                        containerWidth="100%"
+                        containerHeight={450}
+                        easeType="back.out(1.2)"
+                        animationDelay={0.2}
+                    />
                 </div>
             </div>
         </section>
