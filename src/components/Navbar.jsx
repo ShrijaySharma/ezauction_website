@@ -56,7 +56,7 @@ const Navbar = () => {
                         <button
                             key={link.name}
                             onClick={() => handleNavClick(link.href)}
-                            className={`text-xl font-black tracking-tighter uppercase italic transition-all duration-300 transform hover:scale-110 hover:text-accent ${isScrolled || location.pathname !== '/' ? 'text-textDark' : 'text-white/90'
+                            className={`text-xl font-display font-bold tracking-wide uppercase transition-all duration-300 transform hover:-translate-y-1 hover:text-accent ${isScrolled || location.pathname !== '/' ? 'text-textDark' : 'text-white/90'
                                 }`}
                         >
                             {link.name}
@@ -64,16 +64,16 @@ const Navbar = () => {
                     ))}
                     <a
                         href="https://app.ezauction.online"
-                        className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${isScrolled || location.pathname !== '/'
-                            ? 'text-primary border border-primary hover:bg-primary hover:text-white'
-                            : 'text-white border border-white hover:bg-white hover:text-primary'
+                        className={`px-5 py-2 rounded-none text-sm font-mono font-bold transition-all shadow-sharp hover:shadow-[6px_6px_0px_#0F172A] hover:-translate-y-0.5 transform ${isScrolled || location.pathname !== '/'
+                            ? 'text-primary border-2 border-primary hover:bg-primary hover:text-white'
+                            : 'text-white border-2 border-white hover:bg-white hover:text-primary shadow-sharp-light hover:shadow-[6px_6px_0px_#FFFFFF]'
                             }`}
                     >
                         Login
                     </a>
                     <button
                         onClick={() => handleNavClick('#contact')}
-                        className="bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+                        className="bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-none border-2 border-primary text-sm font-mono font-bold shadow-sharp hover:shadow-sharp-hover transition-all transform hover:-translate-y-0.5"
                     >
                         Book Auction
                     </button>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Twitter, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -17,10 +17,8 @@ const Footer = () => {
                             Professional cricket auction platform for seamless, transparent, and exciting bidding experiences.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-                            <a href="https://www.instagram.com/ezauction_?igsh=Nmw3cnltN2FndTl1&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
+                            <a href="#" className="text-gray-400 hover:text-white transition-colors hover:-translate-y-1 transform"><Twitter className="w-5 h-5" /></a>
+                            <a href="https://www.instagram.com/ezauction_?igsh=Nmw3cnltN2FndTl1&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors hover:-translate-y-1 transform"><Instagram className="w-5 h-5" /></a>
                         </div>
                     </div>
 

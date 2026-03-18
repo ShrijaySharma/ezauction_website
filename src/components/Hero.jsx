@@ -5,6 +5,11 @@ import { ArrowRight, Play, ChevronRight, ChevronLeft } from 'lucide-react';
 
 const dashboards = [
     {
+        src: "/host dashboard.png",
+        title: "Host Dashboard",
+        color: "from-orange-500 to-red-500"
+    },
+    {
         src: "/admin_dashboard.png",
         title: "Admin Dashboard",
         color: "from-blue-500 to-cyan-500" // Indicator color
@@ -13,11 +18,6 @@ const dashboards = [
         src: "/team_owner_dashbaord.png",
         title: "Team Owner Dashboard",
         color: "from-purple-500 to-pink-500"
-    },
-    {
-        src: "/host dashboard.png",
-        title: "Host Dashboard",
-        color: "from-orange-500 to-red-500"
     }
 ];
 
@@ -59,7 +59,7 @@ const Hero = () => {
                         <span>Multi-Sport Auctions Made Easy</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[1] tracking-tighter uppercase italic">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-[1] tracking-wide uppercase">
                         Run Your <br />
                         <span className="text-white drop-shadow-[0_5px_15px_rgba(59,130,246,0.5)]">Auction</span> <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400">
@@ -69,7 +69,7 @@ const Hero = () => {
 
                     <div className="flex flex-wrap gap-2 md:gap-3 justify-center md:justify-start pt-2">
                         {['🏏 Cricket', '⚽ Football', '🏐 Volleyball', '🏑 Hockey'].map((sport, i) => (
-                            <span key={i} className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-gray-200 shadow-sm backdrop-blur-md hover:bg-white/10 transition-colors cursor-default">
+                            <span key={i} className="px-4 py-1.5 bg-primary border-2 border-white/20 rounded-none text-sm font-mono font-medium text-gray-200 shadow-sharp-light hover:bg-white/10 transition-all cursor-default transform hover:-translate-y-1 hover:shadow-[6px_6px_0px_#FFFFFF]">
                                 {sport}
                             </span>
                         ))}
@@ -82,12 +82,12 @@ const Hero = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <button
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="group flex items-center justify-center space-x-2 bg-accent hover:bg-blue-600 text-white px-8 py-3 md:py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-accent/50 transition-all transform hover:-translate-y-1 w-full sm:w-auto"
+                            className="group flex items-center justify-center space-x-2 bg-accent hover:bg-blue-600 text-white px-8 py-3 md:py-4 rounded-none border-2 border-primary text-lg font-mono font-bold shadow-sharp hover:shadow-sharp-hover transition-all transform hover:-translate-y-1 w-full sm:w-auto"
                         >
                             <span>Book Your Auction</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <button className="flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white px-8 py-3 md:py-4 rounded-full text-lg font-semibold transition-all w-full sm:w-auto">
+                        <button className="flex items-center justify-center space-x-2 bg-primary hover:bg-gray-800 border-2 border-white text-white px-8 py-3 md:py-4 rounded-none text-lg font-mono font-bold shadow-sharp-light transition-all w-full sm:w-auto">
                             <Play className="w-5 h-5 fill-current" />
                             <span>View Demo</span>
                         </button>
@@ -112,7 +112,7 @@ const Hero = () => {
                     transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                     className="relative perspective-1000"
                 >
-                    <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm transform hover:scale-[1.02] transition-transform duration-500 group">
+                    <div className="relative rounded-none overflow-hidden shadow-[8px_8px_0px_#FFFFFF] border-[3px] border-white bg-white/5 transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_#FFFFFF] transition-all duration-300 group">
                         <div className="bg-gray-800 py-2 px-4 flex items-center gap-2 border-b border-white/10 justify-between">
                             <div className="flex items-center gap-2">
                                 <div className="flex gap-1.5">

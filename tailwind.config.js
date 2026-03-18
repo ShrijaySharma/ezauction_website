@@ -8,6 +8,13 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
+        display: ['Oswald', 'sans-serif'],
+        mono: ['Space Mono', 'monospace'],
+      },
+      boxShadow: {
+        sharp: '4px 4px 0px #0F172A',
+        'sharp-hover': '6px 6px 0px #0F172A',
+        'sharp-light': '4px 4px 0px #FFFFFF',
       },
       colors: {
         primary: "#020617", // Dark Slate / Near Black

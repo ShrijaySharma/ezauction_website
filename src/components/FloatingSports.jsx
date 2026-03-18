@@ -14,21 +14,18 @@ const FloatingSports = () => {
             {sportsData.map((sport, index) => (
                 <motion.div
                     key={index}
-                    className={`absolute flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br ${sport.color} bg-opacity-20 backdrop-blur-sm md:backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)]`}
-                    style={{ top: sport.top, left: sport.left, right: sport.right, bottom: sport.bottom, opacity: 0.8, willChange: 'transform' }}
-                    animate={{
-                        y: [0, -30, 0],
-                        rotate: [0, 15, -15, 0],
-                        scale: [1, 1.1, 1],
-                    }}
+                    className={`absolute flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-none bg-primary border-[3px] border-white shadow-[4px_4px_0px_#FFFFFF] cursor-crosshair`}
+                    style={{ top: sport.top, left: sport.left, right: sport.right, bottom: sport.bottom, willChange: 'transform' }}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    whileHover={{ scale: 1.1, y: -10, rotate: index % 2 === 0 ? 5 : -5, boxShadow: '8px 8px 0px #FFFFFF' }}
                     transition={{
-                        duration: 6,
-                        repeat: Infinity,
-                        delay: sport.delay,
-                        ease: "easeInOut",
+                        type: "spring", stiffness: 400, damping: 10,
+                        opacity: { delay: sport.delay, duration: 0.5 },
+                        y: { delay: sport.delay, duration: 0.5 }
                     }}
                 >
-                    <span className="text-3xl md:text-4xl drop-shadow-xl" title={sport.label}>{sport.emoji}</span>
+                    <span className="text-3xl md:text-4xl" title={sport.label}>{sport.emoji}</span>
                 </motion.div>
             ))}
         </div>
