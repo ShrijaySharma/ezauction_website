@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CheckCircle, XCircle, Trash2, Clock, Eye, RefreshCw } from 'lucide-react';
+import { CheckCircle, XCircle, Trash2, Clock, Eye, RefreshCw, Star } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 const ReviewsEditor = () => {
@@ -167,6 +167,10 @@ const ReviewsEditor = () => {
                                             </span>
                                             <span className="text-slate-600 text-xs">
                                                 {new Date(review.created_at).toLocaleDateString('en-IN')}
+                                            </span>
+                                            <span className="flex items-center gap-1 text-amber-400 text-xs font-bold bg-amber-400/10 px-2 py-0.5 rounded-full ml-auto md:ml-2">
+                                                <Star className="w-3 h-3 fill-amber-400" />
+                                                {review.rating || 5}
                                             </span>
                                         </div>
                                         <p className="text-slate-300 text-sm leading-relaxed">{review.review}</p>

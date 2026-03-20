@@ -1,11 +1,44 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { X, Send, CheckCircle, AlertCircle, Star } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+
+const StarRating = ({ rating, setRating }) => {
+    const [hover, setHover] = useState(0);
+
+    return (
+        <div className="flex gap-1.5">
+            {[1, 2, 3, 4, 5].map((star) => (
+                <button
+                    key={star}
+                    type="button"
+                    onClick={() => setRating(star)}
+                    onMouseEnter={() => setHover(star)}
+                    onMouseLeave={() => setHover(0)}
+                    className="transition-transform hover:scale-110"
+                >
+                    <Star
+                        className={`w-7 h-7 transition-colors ${
+                            star <= (hover || rating)
+                                ? 'fill-amber-400 text-amber-400'
+                                : 'text-slate-600'
+                        }`}
+                    />
+                </button>
+            ))}
+            {rating > 0 && (
+                <span className="text-slate-400 text-sm ml-2 self-center">
+                    {rating}/5
+                </span>
+            )}
+        </div>
+    );
+};
 
 const ReviewForm = ({ onClose, onSubmitted }) => {
     const [name, setName] = useState('');
     const [review, setReview] = useState('');
+    const [rating, setRating] = useState(0);
     const [submitting, setSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState('');
@@ -19,6 +52,11 @@ const ReviewForm = ({ onClose, onSubmitted }) => {
             return;
         }
 
+        if (rating === 0) {
+            setError('Please select a star rating.');
+            return;
+        }
+
         if (review.trim().length < 10) {
             setError('Please write at least 10 characters for your review.');
             return;
@@ -28,7 +66,7 @@ const ReviewForm = ({ onClose, onSubmitted }) => {
         try {
             const { error: insertError } = await supabase
                 .from('website_reviews')
-                .insert([{ name: name.trim(), review: review.trim(), status: 'pending' }]);
+                .insert([{ name: name.trim(), review: review.trim(), rating, status: 'pending' }]);
 
             if (insertError) throw insertError;
 
@@ -101,6 +139,13 @@ const ReviewForm = ({ onClose, onSubmitted }) => {
                                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                                         maxLength={50}
                                     />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-300 mb-1.5">
+                                        Your Rating
+                                    </label>
+                                    <StarRating rating={rating} setRating={setRating} />
                                 </div>
 
                                 <div>
