@@ -128,7 +128,7 @@ const Reviews = () => {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: index * 0.05, duration: 0.4 }}
-                                    className="min-w-[340px] md:min-w-[400px] flex-shrink-0 snap-start relative group"
+                                    className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start relative group"
                                 >
                                     <div className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-8 h-full min-h-[300px] flex flex-col hover:bg-white/[0.06] hover:border-white/10 transition-all duration-300">
                                         {renderStars(review.rating)}
@@ -156,10 +156,10 @@ const Reviews = () => {
 
                             {/* View All Card (appears at the end of the scroll) */}
                             {totalCount > 10 && (
-                                <div className="min-w-[300px] flex-shrink-0 snap-start relative flex items-center justify-center p-4">
+                                <div className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start relative flex items-center justify-center p-4">
                                     <button
                                         onClick={() => navigate('/reviews')}
-                                        className="flex flex-col items-center justify-center gap-4 w-full h-[300px] rounded-2xl border-2 border-dashed border-white/20 text-slate-400 hover:text-white hover:border-accent hover:bg-white/5 transition-all group"
+                                        className="flex flex-col items-center justify-center gap-4 w-full h-full min-h-[300px] rounded-2xl border-2 border-dashed border-white/20 text-slate-400 hover:text-white hover:border-accent hover:bg-white/5 transition-all group"
                                     >
                                         <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                                             <ArrowRight className="w-8 h-8 group-hover:scale-110 transition-transform" />
