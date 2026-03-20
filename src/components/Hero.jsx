@@ -2,34 +2,19 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Play, ChevronRight, ChevronLeft } from 'lucide-react';
-
-const dashboards = [
-    {
-        src: "/host dashboard.png",
-        title: "Host Dashboard",
-        color: "from-orange-500 to-red-500"
-    },
-    {
-        src: "/admin_dashboard.png",
-        title: "Admin Dashboard",
-        color: "from-blue-500 to-cyan-500" // Indicator color
-    },
-    {
-        src: "/team_owner_dashbaord.png",
-        title: "Team Owner Dashboard",
-        color: "from-purple-500 to-pink-500"
-    }
-];
+import { useSiteContent } from '../context/SiteContentContext';
 
 const Hero = () => {
+    const { content } = useSiteContent();
+    const hero = content.hero;
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % dashboards.length);
+        setCurrentIndex((prev) => (prev + 1) % hero.dashboards.length);
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + dashboards.length) % dashboards.length);
+        setCurrentIndex((prev) => (prev - 1 + hero.dashboards.length) % hero.dashboards.length);
     };
 
     return (
@@ -56,19 +41,19 @@ const Hero = () => {
                 >
                     <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs md:text-sm font-medium mx-auto md:mx-0">
                         <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-                        <span>Multi-Sport Auctions Made Easy</span>
+                        <span>{hero.badgeText}</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-[1] tracking-wide uppercase">
-                        Run Your <br />
-                        <span className="text-white drop-shadow-[0_5px_15px_rgba(59,130,246,0.5)]">Auction</span> <br />
+                        {hero.titleLine1} <br />
+                        <span className="text-white drop-shadow-[0_5px_15px_rgba(59,130,246,0.5)]">{hero.titleLine2}</span> <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400">
-                            LIKE PRO LEAGUES
+                            {hero.titleLine3}
                         </span>
                     </h1>
 
                     <div className="flex flex-wrap gap-2 md:gap-3 justify-center md:justify-start pt-2">
-                        {['🏏 Cricket', '⚽ Football', '🏐 Volleyball', '🏑 Hockey'].map((sport, i) => (
+                        {hero.sports.map((sport, i) => (
                             <span key={i} className="px-4 py-1.5 bg-primary border-2 border-white/20 rounded-none text-sm font-mono font-medium text-gray-200 shadow-sharp-light hover:bg-white/10 transition-all cursor-default transform hover:-translate-y-1 hover:shadow-[6px_6px_0px_#FFFFFF]">
                                 {sport}
                             </span>
@@ -76,7 +61,7 @@ const Hero = () => {
                     </div>
 
                     <p className="text-base md:text-xl text-gray-300 max-w-xl leading-relaxed mx-auto md:mx-0">
-                        EzAuction is the professional real-time platform that transforms your local sports tournaments into a world-class bidding experience. Transparent, exciting, and paperless.
+                        {hero.description}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -84,12 +69,12 @@ const Hero = () => {
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                             className="group flex items-center justify-center space-x-2 bg-accent hover:bg-blue-600 text-white px-8 py-3 md:py-4 rounded-none border-2 border-primary text-lg font-mono font-bold shadow-sharp hover:shadow-sharp-hover transition-all transform hover:-translate-y-1 w-full sm:w-auto"
                         >
-                            <span>Book Your Auction</span>
+                            <span>{hero.ctaText}</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
                         <button className="flex items-center justify-center space-x-2 bg-primary hover:bg-gray-800 border-2 border-white text-white px-8 py-3 md:py-4 rounded-none text-lg font-mono font-bold shadow-sharp-light transition-all w-full sm:w-auto">
                             <Play className="w-5 h-5 fill-current" />
-                            <span>View Demo</span>
+                            <span>{hero.secondaryCtaText}</span>
                         </button>
                     </div>
 
@@ -100,7 +85,7 @@ const Hero = () => {
                                     <div key={i} className="w-8 h-8 rounded-full bg-gray-600 border-2 border-primary" />
                                 ))}
                             </div>
-                            <span>Trusted by 100+ Organizers</span>
+                            <span>{hero.trustText}</span>
                         </div>
                     </div>
                 </motion.div>
@@ -121,7 +106,7 @@ const Hero = () => {
                                     <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                                 </div>
                                 <span className="text-sm md:text-base text-gray-300 font-bold ml-2">
-                                    EzAuction - {dashboards[currentIndex].title}
+                                    EzAuction - {hero.dashboards[currentIndex]?.title}
                                 </span>
                             </div>
                         </div>
@@ -131,8 +116,8 @@ const Hero = () => {
                             <AnimatePresence mode='wait'>
                                 <motion.img
                                     key={currentIndex}
-                                    src={dashboards[currentIndex].src}
-                                    alt={dashboards[currentIndex].title}
+                                    src={hero.dashboards[currentIndex]?.src}
+                                    alt={hero.dashboards[currentIndex]?.title}
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
@@ -163,12 +148,12 @@ const Hero = () => {
 
                             {/* Indicators */}
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-                                {dashboards.map((_, idx) => (
+                                {hero.dashboards.map((_, idx) => (
                                     <button
                                         key={idx}
                                         onClick={() => setCurrentIndex(idx)}
                                         className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex
-                                            ? `w-6 bg-gradient-to-r ${dashboards[idx].color}`
+                                            ? `w-6 bg-gradient-to-r ${hero.dashboards[idx].color}`
                                             : 'bg-white/30 hover:bg-white/50'
                                             }`}
                                     />

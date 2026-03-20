@@ -1,7 +1,11 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useSiteContent } from '../context/SiteContentContext';
 
 const CTASection = () => {
+    const { content } = useSiteContent();
+    const cta = content.cta;
+
     return (
         <section className="py-24 relative bg-primary overflow-hidden">
             <div className="absolute inset-0">
@@ -12,17 +16,17 @@ const CTASection = () => {
 
             <div className="container mx-auto px-6 relative z-10 text-center">
                 <h2 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase italic tracking-tighter">
-                    Ready to Run Your Auction <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Professionally?</span>
+                    {cta.heading} <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">{cta.headingAccent}</span>
                 </h2>
                 <p className="text-blue-200 text-lg mb-10 max-w-2xl mx-auto font-medium">
-                    Join hundreds of tournament organizers who trust EzAuction for a seamless, glitch-free auction experience.
+                    {cta.description}
                 </p>
 
                 <button
                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                     className="group inline-flex items-center bg-white text-primary px-10 py-5 rounded-full text-xl font-black uppercase italic tracking-widest shadow-xl hover:shadow-accent/40 hover:bg-gray-100 transition-all transform hover:-translate-y-1"
                 >
-                    <span>Book Auction</span>
+                    <span>{cta.buttonText}</span>
                     <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
             </div>

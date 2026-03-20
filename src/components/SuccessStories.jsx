@@ -2,70 +2,20 @@ import React from 'react';
 import { Trophy, Calendar, Award, Medal, Star, Crown, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BounceCards from './BounceCards';
-
-const stories = [
-    {
-        title: "Suncity Society Cricket Auction",
-        role: "Housing Society Tournament",
-        date: "DEC 2025",
-        description: "Successfully managed 8 teams and 120+ players for a society-wide premium cricket league.",
-        gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-        title: "Parshuram Cup Cricket Auction",
-        role: "Regional Cricket Tournament",
-        date: "JAN 2026",
-        description: "A high-stakes regional auction with real-time bidding for 18 franchises.",
-        gradient: "from-purple-500 to-pink-500"
-    },
-    {
-        title: "Gayatri Premier League 2026",
-        role: "Premier Cricket League",
-        date: "FEB 2026",
-        description: "Seamlessly orchestrated an auction for 12 teams with 11 players each — zero glitches, zero delays.",
-        gradient: "from-green-500 to-emerald-500"
-    },
-    {
-        title: "Khalsa Champions League (KCL)",
-        role: "Premium League Auction",
-        date: "MAR 2026",
-        description: "Successfully conducted auction for 8 teams with 12 players per team, fully managed without any issues.",
-        gradient: "from-orange-500 to-yellow-500"
-    },
-    {
-        title: "NV Legends League",
-        role: "Pro-Am Cricket League",
-        date: "APR 2026",
-        description: "A spectacular event featuring 6 competitive teams and over 100 passionate players, delivering a thrilling execution.",
-        gradient: "from-indigo-500 to-violet-500"
-    },
-    {
-        title: "Junior Cricket Box League",
-        role: "Youth Cricket Tournament",
-        date: "APR 2026",
-        description: "Empowering next-gen talent, this box cricket league auction seamlessly managed 6 dynamic franchises.",
-        gradient: "from-rose-500 to-red-500"
-    },
-    {
-        title: "Box Cricket Carnival",
-        role: "Box Cricket Tournament",
-        date: "MAR 2026",
-        description: "An electrifying box cricket extravaganza, flawlessly auctioning over 60 talented players across 6 competitive teams.",
-        gradient: "from-fuchsia-500 to-purple-500"
-    }
-];
+import { useSiteContent } from '../context/SiteContentContext';
 
 const SuccessStories = () => {
-    // Defines transforms for 7 cards spacing them evenly and straight
-    const transformStyles = [
-        "rotate(0deg) translate(-390px)",
-        "rotate(0deg) translate(-260px)",
-        "rotate(0deg) translate(-130px)",
-        "rotate(0deg) translate(0px)",
-        "rotate(0deg) translate(130px)",
-        "rotate(0deg) translate(260px)",
-        "rotate(0deg) translate(390px)"
-    ];
+    const { content } = useSiteContent();
+    const section = content.successStories;
+    const stories = section.stories;
+
+    // Auto-compute transform styles based on the number of stories
+    const count = stories.length;
+    const spacing = Math.min(130, 900 / count); // Shrink spacing as count grows
+    const transformStyles = stories.map((_, i) => {
+        const offset = (i - Math.floor(count / 2)) * spacing;
+        return `rotate(0deg) translate(${offset}px)`;
+    });
 
     const storyCards = stories.map((story, index) => (
         <div key={index} className="w-full h-full relative overflow-hidden flex flex-col group rounded-[30px] border border-white/10 bg-slate-900 shadow-2xl">
@@ -160,9 +110,9 @@ const SuccessStories = () => {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-20">
-                    <span className="text-accent font-semibold tracking-widest text-sm uppercase bg-accent/10 text-accent px-4 py-1.5 rounded-full ring-1 ring-accent/20">Track Record</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mt-6 mb-4 tracking-tight drop-shadow-sm">Recent Success Stories</h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto text-lg">Hover over the cards to explore our flawlessly executed premium cricket and pro-am league auction events.</p>
+                    <span className="text-accent font-semibold tracking-widest text-sm uppercase bg-accent/10 text-accent px-4 py-1.5 rounded-full ring-1 ring-accent/20">{section.badgeText}</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mt-6 mb-4 tracking-tight drop-shadow-sm">{section.heading}</h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto text-lg">{section.description}</p>
                 </div>
 
                 <div className="flex justify-center items-center w-full max-w-[100vw] overflow-visible pt-16 pb-24">

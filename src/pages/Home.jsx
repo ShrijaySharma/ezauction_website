@@ -5,6 +5,7 @@ import Features from '../components/Features';
 import SuccessStories from '../components/SuccessStories';
 import HowItWorks from '../components/HowItWorks';
 import CTASection from '../components/CTASection';
+import Reviews from '../components/Reviews';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -16,8 +17,8 @@ const Home = () => {
             <Features />
             <SuccessStories />
             <HowItWorks />
-            {/* Pricing Section Removed from Home Page */}
             <CTASection />
+            <Reviews />
             <Contact />
             <Footer />
         </div>
