@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Calendar } from 'lucide-react';
+import { Trophy, Calendar, Award, Medal, Star, Crown, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BounceCards from './BounceCards';
 
@@ -45,18 +45,26 @@ const stories = [
         date: "APR 2026",
         description: "Empowering next-gen talent, this box cricket league auction seamlessly managed 6 dynamic franchises.",
         gradient: "from-rose-500 to-red-500"
+    },
+    {
+        title: "Box Cricket Carnival",
+        role: "Box Cricket Tournament",
+        date: "MAR 2026",
+        description: "An electrifying box cricket extravaganza, flawlessly auctioning over 60 talented players across 6 competitive teams.",
+        gradient: "from-fuchsia-500 to-purple-500"
     }
 ];
 
 const SuccessStories = () => {
-    // Defines transforms for 6 cards spacing them evenly
+    // Defines transforms for 7 cards spacing them evenly and straight
     const transformStyles = [
-        "rotate(12deg) translate(-360px) translateY(10px)",
-        "rotate(7deg) translate(-216px) translateY(5px)",
-        "rotate(2deg) translate(-72px)",
-        "rotate(-2deg) translate(72px)",
-        "rotate(-7deg) translate(216px) translateY(5px)",
-        "rotate(-12deg) translate(360px) translateY(10px)"
+        "rotate(0deg) translate(-390px)",
+        "rotate(0deg) translate(-260px)",
+        "rotate(0deg) translate(-130px)",
+        "rotate(0deg) translate(0px)",
+        "rotate(0deg) translate(130px)",
+        "rotate(0deg) translate(260px)",
+        "rotate(0deg) translate(390px)"
     ];
 
     const storyCards = stories.map((story, index) => (
@@ -98,6 +106,57 @@ const SuccessStories = () => {
             {/* Background elements */}
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-20 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+
+            {/* Decorative Floating Sports Elements */}
+            <div className="hidden xl:block absolute inset-0 pointer-events-none z-0">
+                <motion.div 
+                    animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }} 
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-32 left-[8%] opacity-[0.15] text-accent"
+                >
+                    <Award size={100} />
+                </motion.div>
+                
+                <motion.div 
+                    animate={{ y: [0, 30, 0], rotate: [0, -15, 0] }} 
+                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute top-[45%] left-[4%] opacity-10 text-white"
+                >
+                    <Target size={120} />
+                </motion.div>
+
+                <motion.div 
+                    animate={{ y: [0, -25, 0], rotate: [0, 20, 0] }} 
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    className="absolute bottom-32 left-[10%] opacity-[0.15] text-blue-400"
+                >
+                    <Medal size={90} />
+                </motion.div>
+
+                <motion.div 
+                    animate={{ y: [0, 25, 0], rotate: [0, -10, 0] }} 
+                    transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    className="absolute top-40 right-[10%] opacity-[0.15] text-yellow-500"
+                >
+                    <Crown size={100} />
+                </motion.div>
+                
+                <motion.div 
+                    animate={{ y: [0, -35, 0], rotate: [0, 15, 0] }} 
+                    transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                    className="absolute top-[50%] right-[3%] opacity-[0.08] text-white"
+                >
+                    <Star size={140} />
+                </motion.div>
+
+                <motion.div 
+                    animate={{ y: [0, 20, 0], rotate: [0, -20, 0] }} 
+                    transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                    className="absolute bottom-28 right-[8%] opacity-[0.12] text-purple-400"
+                >
+                    <Trophy size={110} />
+                </motion.div>
+            </div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-20">
