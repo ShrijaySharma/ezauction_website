@@ -78,7 +78,7 @@ const ReviewForm = ({ onClose, onSubmitted }) => {
                             <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
                             <h3 className="text-xl font-bold text-white mb-2">Thank You!</h3>
                             <p className="text-slate-400">
-                                Your review has been submitted and will appear after approval.
+                                Your review has been submitted successfully. We appreciate your feedback!
                             </p>
                         </motion.div>
                     ) : (
