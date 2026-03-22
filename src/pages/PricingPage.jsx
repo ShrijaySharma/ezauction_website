@@ -15,7 +15,7 @@ const PricingPage = () => {
     const plans = [
         {
             name: "Basic Access",
-            price: "₹2,000",
+            price: "Free",
             subtitle: "For Small Friendly Matches",
             highlight: false,
             features: {
@@ -112,8 +112,8 @@ const PricingPage = () => {
                                                 </span>
                                             )}
                                             <h3 className="text-2xl font-black text-primary uppercase italic tracking-tighter">{plan.name.split(" ")[0]}</h3>
-                                            <p className="text-accent text-4xl font-black mt-2 tracking-tighter">{plan.price}</p>
-                                            <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">/ auction</span>
+                                            <p className="text-primary text-4xl font-black mt-2 tracking-tighter">{plan.price}</p>
+                                            {plan.price !== 'Free' && <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">/ auction</span>}
                                         </div>
                                         {plan.highlight && <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 -rotate-45 translate-x-10 -translate-y-10" />}
                                     </th>
@@ -184,7 +184,7 @@ const PricingPage = () => {
                                 <p className="text-gray-500 text-xs mb-2">{plan.subtitle}</p>
                                 <div className="text-primary">
                                     <span className="text-2xl font-bold">{plan.price}</span>
-                                    <span className="text-gray-400 ml-1 text-xs">/ auction</span>
+                                    {plan.price !== 'Free' && <span className="text-gray-400 ml-1 text-xs">/ auction</span>}
                                 </div>
                             </div>
                             <ul className="space-y-2 mb-5">

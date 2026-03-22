@@ -45,8 +45,7 @@ const Pricing = () => {
                                 <h3 className="text-xl font-bold text-gray-800 mb-2">Basic Access</h3>
                                 <p className="text-gray-500 text-sm">For Small Friendly Matches</p>
                                 <div className="mt-4 flex items-center justify-center text-primary">
-                                    <span className="text-3xl font-bold">₹2,000</span>
-                                    <span className="text-gray-400 ml-1 text-sm font-medium">/ auction</span>
+                                    <span className="text-3xl font-bold uppercase tracking-wider">Free</span>
                                 </div>
                             </div>
 
