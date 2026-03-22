@@ -42,7 +42,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || location.pathname !== '/' ? 'bg-white/90 backdrop-blur-sm md:backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'
+            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || location.pathname !== '/' ? 'bg-surfaceHigh/90 backdrop-blur-sm md:backdrop-blur-md shadow-lg border-b border-white/5 py-4' : 'bg-transparent py-6'
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
@@ -57,7 +57,7 @@ const Navbar = () => {
                         <button
                             key={link.name}
                             onClick={() => handleNavClick(link.href)}
-                            className={`text-xl font-display font-bold tracking-wide uppercase transition-all duration-300 transform hover:-translate-y-1 hover:text-accent ${isScrolled || location.pathname !== '/' ? 'text-textDark' : 'text-white/90'
+                            className={`text-xl font-display font-bold tracking-wide uppercase transition-all duration-300 transform hover:-translate-y-1 hover:text-accent ${isScrolled || location.pathname !== '/' ? 'text-white' : 'text-white/90'
                                 }`}
                         >
                             {link.name}
@@ -65,16 +65,13 @@ const Navbar = () => {
                     ))}
                     <a
                         href="https://app.ezauction.online"
-                        className={`px-5 py-2 rounded-none text-sm font-mono font-bold transition-all shadow-sharp hover:shadow-[6px_6px_0px_#0F172A] hover:-translate-y-0.5 transform ${isScrolled || location.pathname !== '/'
-                            ? 'text-primary border-2 border-primary hover:bg-primary hover:text-white'
-                            : 'text-white border-2 border-white hover:bg-white hover:text-primary shadow-sharp-light hover:shadow-[6px_6px_0px_#FFFFFF]'
-                            }`}
+                        className="px-5 py-2 rounded-xl text-sm font-mono font-bold transition-all text-white border border-white/20 hover:bg-white/10 hover:border-white/50 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.05)] transform hover:-translate-y-0.5"
                     >
                         Login
                     </a>
                     <button
                         onClick={() => handleNavClick('#contact')}
-                        className="bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-none border-2 border-primary text-sm font-mono font-bold shadow-sharp hover:shadow-sharp-hover transition-all transform hover:-translate-y-0.5"
+                        className="bg-gradient-to-r from-accent to-blue-500 hover:from-accent hover:to-accent text-primary px-6 py-2.5 rounded-xl border border-accent/50 text-sm font-mono font-bold shadow-[0_0_15px_rgba(0,230,245,0.3)] hover:shadow-[0_0_25px_rgba(0,230,245,0.5)] transition-all transform hover:-translate-y-0.5"
                     >
                         Book Auction
                     </button>
@@ -86,9 +83,9 @@ const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? (
-                        <X className={isScrolled || location.pathname !== '/' ? 'text-textDark' : 'text-white'} />
+                        <X className={isScrolled || location.pathname !== '/' ? 'text-white' : 'text-white'} />
                     ) : (
-                        <Menu className={isScrolled || location.pathname !== '/' ? 'text-textDark' : 'text-white'} />
+                        <Menu className={isScrolled || location.pathname !== '/' ? 'text-white' : 'text-white'} />
                     )}
                 </button>
             </div>
@@ -100,28 +97,28 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+                        className="md:hidden bg-surfaceHigh border-t border-white/10 overflow-hidden"
                     >
                         <div className="flex flex-col p-4 space-y-3">
                             {navLinks.map((link) => (
                                 <button
                                     key={link.name}
                                     onClick={() => handleNavClick(link.href)}
-                                    className="text-textDark font-medium hover:text-accent text-left py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors"
+                                    className="text-white font-medium hover:text-accent text-left py-2 px-2 hover:bg-white/5 rounded-lg transition-colors"
                                 >
                                     {link.name}
                                 </button>
                             ))}
-                            <hr className="border-gray-100 my-2" />
+                            <hr className="border-white/10 my-2" />
                             <a
                                 href="https://app.ezauction.online"
-                                className="text-center w-full py-3 rounded-lg border border-gray-200 text-textDark font-semibold hover:bg-gray-50"
+                                className="text-center w-full py-3 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 transition-colors"
                             >
                                 Login
                             </a>
                             <button
                                 onClick={() => handleNavClick('#contact')}
-                                className="w-full bg-accent text-white py-3 rounded-lg font-semibold shadow-md"
+                                className="w-full bg-gradient-to-r from-accent to-blue-500 text-primary py-3 rounded-lg font-bold shadow-[0_0_15px_rgba(0,230,245,0.3)] transition-all"
                             >
                                 Book Auction
                             </button>

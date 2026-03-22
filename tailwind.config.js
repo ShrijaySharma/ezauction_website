@@ -17,11 +17,14 @@ export default {
         'sharp-light': '4px 4px 0px #FFFFFF',
       },
       colors: {
-        primary: "#020617", // Dark Slate / Near Black
-        accent: "#3b82f6",  // Blue-500 (More vibrant than indigo for sports)
-        secondary: "#8b5cf6", // Violet-500
-        background: "#F8FAFC", // Slate-50
-        textDark: "#0F172A", // Slate-900
+        primary: "#0b1326", // Deep Slate / Space Grotesk background
+        accent: "#00e6f5",  // Vibrant Cyan
+        secondary: "#cf5cff", // Neon Purple
+        background: "#060e20", // Void-like dark background
+        surface: "#131b2e", // surface-container-low
+        surfaceHigh: "#2d3449", // surface-container-highest
+        textDark: "#dae2fd", // off-white text
+        textMuted: "#bac9cc",
         league: {
           blue: "#2563eb",
           gold: "#f59e0b",

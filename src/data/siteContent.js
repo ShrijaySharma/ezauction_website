@@ -2,15 +2,15 @@
 // This serves as the fallback when localStorage has no saved data.
 
 export const defaultHeroContent = {
-  badgeText: "Multi-Sport Auctions Made Easy",
-  titleLine1: "Run Your",
-  titleLine2: "Auction",
-  titleLine3: "LIKE PRO LEAGUES",
+  badgeText: "Experience Next-Gen Auctions",
+  titleLine1: "Live Auctions",
+  titleLine2: "& Real-Time",
+  titleLine3: "BIDDING",
   sports: ["🏏 Cricket", "⚽ Football", "🏐 Volleyball", "🏑 Hockey"],
   description:
-    "EzAuction is the professional real-time platform that transforms your local sports tournaments into a world-class bidding experience. Transparent, exciting, and paperless.",
-  ctaText: "Book Your Auction",
-  secondaryCtaText: "View Demo",
+    "EzAuction is the professional platform that transforms your local sports tournaments into a world-class bidding experience. Transparent, instant, and entirely paperless.",
+  ctaText: "Start Bidding",
+  secondaryCtaText: "Watch Demo",
   trustText: "Trusted by 100+ Organizers",
   dashboards: [
     {
@@ -39,42 +39,42 @@ export const defaultFeaturesContent = {
     "Everything you need to run a seamless, high-stakes sports auction (Cricket, Football, Volleyball, Hockey) powered by modern technology.",
   features: [
     {
-      iconName: "Gavel",
+      iconName: "Zap",
       title: "Real-Time Live Bidding",
       description:
         "Experience the thrill of a live auction with millisecond-latency updates for all teams.",
       color: "bg-blue-500",
     },
     {
-      iconName: "Lock",
+      iconName: "Key",
       title: "Private Team Portals",
       description:
         "Secure login portals for team owners to manage bids and maintain privacy.",
       color: "bg-purple-500",
     },
     {
-      iconName: "Database",
+      iconName: "Server",
       title: "Complete Auction Data",
       description:
         "Automatically store detailed records of sold players, prices, and team allocations.",
       color: "bg-indigo-500",
     },
     {
-      iconName: "CheckCircle",
+      iconName: "ListChecks",
       title: "Sold & Unsold Tracking",
       description:
         "Automatically categorize players as they are sold or passed, with easy unsold handling.",
       color: "bg-green-500",
     },
     {
-      iconName: "Shield",
+      iconName: "Eye",
       title: "Fully Transparent",
       description:
         "Every bid is logged and displayed visible to everyone, ensuring a fair auction process.",
       color: "bg-red-500",
     },
     {
-      iconName: "Smartphone",
+      iconName: "MonitorSmartphone",
       title: "Multi-Device Support",
       description:
         "Works seamlessly on laptops, tablets, and phones for auctioneers and team owners.",
