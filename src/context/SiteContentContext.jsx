@@ -33,11 +33,23 @@ export const SiteContentProvider = ({ children }) => {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        // Merge with defaults so new fields are always present
+
+        // Merge stories arrays: keep saved stories + append any NEW default stories not already present
+        const savedStories = parsed.successStories?.stories || [];
+        const savedTitles = new Set(savedStories.map((s) => s.title));
+        const newDefaultStories = defaults.successStories.stories.filter(
+          (s) => !savedTitles.has(s.title)
+        );
+        const mergedStories = [...savedStories, ...newDefaultStories];
+
         return {
           hero: { ...defaults.hero, ...parsed.hero },
           features: { ...defaults.features, ...parsed.features },
-          successStories: { ...defaults.successStories, ...parsed.successStories },
+          successStories: {
+            ...defaults.successStories,
+            ...parsed.successStories,
+            stories: mergedStories,
+          },
           howItWorks: { ...defaults.howItWorks, ...parsed.howItWorks },
           cta: { ...defaults.cta, ...parsed.cta },
           contact: { ...defaults.contact, ...parsed.contact },
