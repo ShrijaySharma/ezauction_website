@@ -84,7 +84,10 @@ const Pricing = () => {
                                 <p className="text-gray-500 text-sm">Complete Self-Managed Solution</p>
                                 <div className="mt-4 flex flex-col items-center justify-center">
                                     <div className="flex items-center gap-2 mb-1">
-                                        <span className="text-lg font-semibold text-gray-400 line-through decoration-red-500 decoration-2">₹4,000</span>
+                                        <span
+                                            className="text-lg font-semibold text-gray-400"
+                                            style={{ textDecoration: 'line-through', textDecorationColor: '#ef4444', textDecorationThickness: '2px' }}
+                                        >₹4,000</span>
                                         <span className="text-[10px] font-bold bg-red-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">Limited Offer</span>
                                     </div>
                                     <div className="flex items-baseline gap-1">
@@ -132,7 +135,10 @@ const Pricing = () => {
                                 <p className="text-gray-500 text-sm">Hassle-Free Management</p>
                                 <div className="mt-4 flex flex-col items-center justify-center">
                                     <div className="flex items-center gap-2 mb-1">
-                                        <span className="text-lg font-semibold text-gray-400 line-through decoration-red-500 decoration-2">₹5,000</span>
+                                        <span
+                                            className="text-lg font-semibold text-gray-400"
+                                            style={{ textDecoration: 'line-through', textDecorationColor: '#ef4444', textDecorationThickness: '2px' }}
+                                        >₹5,000</span>
                                         <span className="text-[10px] font-bold bg-red-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">Limited Offer</span>
                                     </div>
                                     <div className="flex items-baseline gap-1">
