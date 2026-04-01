@@ -82,9 +82,15 @@ const Pricing = () => {
                             <div className="text-center mb-6">
                                 <h3 className="text-2xl font-bold text-gray-800 mb-2">Standard</h3>
                                 <p className="text-gray-500 text-sm">Complete Self-Managed Solution</p>
-                                <div className="mt-4 flex items-center justify-center text-primary">
-                                    <span className="text-4xl font-bold">₹4,000</span>
-                                    <span className="text-gray-400 ml-1 text-sm font-medium">/ auction</span>
+                                <div className="mt-4 flex flex-col items-center justify-center">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-lg font-semibold text-gray-400 line-through decoration-red-500 decoration-2">₹4,000</span>
+                                        <span className="text-[10px] font-bold bg-red-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">Limited Offer</span>
+                                    </div>
+                                    <div className="flex items-baseline gap-1">
+                                        <span className="text-4xl font-bold text-green-500">₹2,999</span>
+                                        <span className="text-gray-400 text-sm font-medium">/ auction</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -124,9 +130,15 @@ const Pricing = () => {
                             <div className="text-center mb-6">
                                 <h3 className="text-xl font-bold text-gray-800 mb-2">Premium</h3>
                                 <p className="text-gray-500 text-sm">Hassle-Free Management</p>
-                                <div className="mt-4 flex items-center justify-center text-primary">
-                                    <span className="text-3xl font-bold">₹5,000</span>
-                                    <span className="text-gray-400 ml-1 text-sm font-medium">/ auction</span>
+                                <div className="mt-4 flex flex-col items-center justify-center">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-lg font-semibold text-gray-400 line-through decoration-red-500 decoration-2">₹5,000</span>
+                                        <span className="text-[10px] font-bold bg-red-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">Limited Offer</span>
+                                    </div>
+                                    <div className="flex items-baseline gap-1">
+                                        <span className="text-3xl font-bold text-green-500">₹3,499</span>
+                                        <span className="text-gray-400 text-sm font-medium">/ auction</span>
+                                    </div>
                                 </div>
                             </div>
 

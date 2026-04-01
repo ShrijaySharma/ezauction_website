@@ -145,6 +145,14 @@ export const defaultSuccessStoriesContent = {
         "An electrifying box cricket extravaganza, flawlessly auctioning over 60 talented players across 6 competitive teams.",
       gradient: "from-fuchsia-500 to-purple-500",
     },
+    {
+      title: "DJPL",
+      role: "District Junior Premier League",
+      date: "MAR 2026",
+      description:
+        "A landmark youth cricket showcase powered by EzAuction — 6 elite franchises competed head-to-head to secure 80+ rising stars in a high-energy, fully digital auction. Every bid was tracked in real-time, every player valued with precision, and every franchise walked away with a balanced, competitive squad. A flawless, zero-downtime event that set the gold standard for junior-level cricket auctions.",
+      gradient: "from-teal-500 to-green-500",
+    },
   ],
 };
 
