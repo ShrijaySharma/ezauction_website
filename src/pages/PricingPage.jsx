@@ -34,7 +34,8 @@ const PricingPage = () => {
         },
         {
             name: "Standard Access",
-            price: "₹4,000",
+            price: "₹2,999",
+            originalPrice: "₹4,000",
             subtitle: "Complete Self-Managed Solution",
             highlight: true,
             tag: "Recommended",
@@ -54,7 +55,8 @@ const PricingPage = () => {
         },
         {
             name: "Premium Managed",
-            price: "₹5,000",
+            price: "₹3,499",
+            originalPrice: "₹5,000",
             subtitle: "Hassle-Free Management",
             highlight: false,
             tag: "VIP",
@@ -112,8 +114,21 @@ const PricingPage = () => {
                                                 </span>
                                             )}
                                             <h3 className="text-2xl font-black text-primary uppercase italic tracking-tighter">{plan.name.split(" ")[0]}</h3>
-                                            <p className="text-primary text-4xl font-black mt-2 tracking-tighter">{plan.price}</p>
-                                            {plan.price !== 'Free' && <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">/ auction</span>}
+                                            {plan.originalPrice ? (
+                                                <div className="flex flex-col items-center mt-2">
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="text-lg font-semibold text-gray-400" style={{ textDecoration: 'line-through', textDecorationColor: '#ef4444', textDecorationThickness: '2px' }}>{plan.originalPrice}</span>
+                                                        <span className="text-[9px] font-bold bg-red-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">Limited Offer</span>
+                                                    </div>
+                                                    <span className="text-4xl font-black text-green-500 tracking-tighter">{plan.price}</span>
+                                                    <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">/ auction</span>
+                                                </div>
+                                            ) : (
+                                                <>
+                                                    <p className="text-primary text-4xl font-black mt-2 tracking-tighter">{plan.price}</p>
+                                                    {plan.price !== 'Free' && <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">/ auction</span>}
+                                                </>
+                                            )}
                                         </div>
                                         {plan.highlight && <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 -rotate-45 translate-x-10 -translate-y-10" />}
                                     </th>
@@ -182,10 +197,21 @@ const PricingPage = () => {
                             <div className="text-center mb-4">
                                 <h3 className="text-lg font-bold text-gray-800 mb-1">{plan.name}</h3>
                                 <p className="text-gray-500 text-xs mb-2">{plan.subtitle}</p>
-                                <div className="text-primary">
-                                    <span className="text-2xl font-bold">{plan.price}</span>
-                                    {plan.price !== 'Free' && <span className="text-gray-400 ml-1 text-xs">/ auction</span>}
-                                </div>
+                                {plan.originalPrice ? (
+                                    <div className="flex flex-col items-center">
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-sm font-semibold text-gray-400" style={{ textDecoration: 'line-through', textDecorationColor: '#ef4444', textDecorationThickness: '2px' }}>{plan.originalPrice}</span>
+                                            <span className="text-[9px] font-bold bg-red-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">Offer</span>
+                                        </div>
+                                        <span className="text-2xl font-bold text-green-500">{plan.price}</span>
+                                        <span className="text-gray-400 text-xs">/ auction</span>
+                                    </div>
+                                ) : (
+                                    <div className="text-primary">
+                                        <span className="text-2xl font-bold">{plan.price}</span>
+                                        {plan.price !== 'Free' && <span className="text-gray-400 ml-1 text-xs">/ auction</span>}
+                                    </div>
+                                )}
                             </div>
                             <ul className="space-y-2 mb-5">
                                 {allFeatures.map((feature, idx) => (
