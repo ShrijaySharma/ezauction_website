@@ -150,8 +150,16 @@ export const defaultSuccessStoriesContent = {
       role: "District Junior Premier League",
       date: "MAR 2026",
       description:
-        "A high-energy junior cricket league where 6 franchises battled to secure 80+ rising stars through a fully digital, zero-downtime auction.",
+        "Flawlessly auctioned 80+ players across 6 franchises with zero downtime.",
       gradient: "from-teal-500 to-green-500",
+    },
+    {
+      title: "SPL Season 1",
+      role: "Sikh Premier League",
+      date: "APR 2026",
+      description:
+        "Executed a seamless auction for 10 competitive teams and 90 players with real-time precision.",
+      gradient: "from-amber-500 to-orange-500",
     },
   ],
 };
