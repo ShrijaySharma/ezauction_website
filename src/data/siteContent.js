@@ -161,6 +161,30 @@ export const defaultSuccessStoriesContent = {
         "Executed a seamless auction for 10 competitive teams and 90 players with real-time precision.",
       gradient: "from-amber-500 to-orange-500",
     },
+    {
+      title: "Maheshwari Box Cricket League (Women's)",
+      role: "Women's Box Cricket League",
+      date: "MAY 2026",
+      description:
+        "Successfully managed the auction for 3 teams and 30 women's box cricket players.",
+      gradient: "from-sky-500 to-blue-500",
+    },
+    {
+      title: "Mahale Podar Chashak S3",
+      role: "Cricket Tournament",
+      date: "MAY 2026",
+      description:
+        "Conducted a smooth and transparent auction process for 9 competitive teams and 100+ players.",
+      gradient: "from-purple-500 to-pink-500",
+    },
+    {
+      title: "Maheshwari Box Cricket League (Men's)",
+      role: "Men's Box Cricket League",
+      date: "MAY 2026",
+      description:
+        "Executed a flawless bidding event featuring 6 franchises and over 60 players.",
+      gradient: "from-green-500 to-emerald-500",
+    },
   ],
 };
 
